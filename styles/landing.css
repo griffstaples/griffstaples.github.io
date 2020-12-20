@@ -1,0 +1,42 @@
+*{
+    text-align:center;
+    font-family:Archivo Black;
+}
+
+
+
+body{
+    background:url('../Images/pexels-philippe-donn-1169754.png');
+    height:100%;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.titleBox{
+    font-size:4.5vh;
+    color:white;
+}
+
+.smallBoxes{
+}
+
+a{
+    
+    font-size:2.5vh;
+    opacity:1;
+    color:white;
+}
+
+a:hover{
+    opacity:0.6;
+    text-decoration-line:none;
+    color:black;
+}
+
+.attribution{
+    font-size:8px;
+    color:white;
+    margin:auto auto 0 auto;
+    
+}

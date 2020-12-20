@@ -1,0 +1,19 @@
+textarea{
+    min-width:100%;
+    min-height:100px;
+}
+label{
+    margin-top:10px;
+    width:100%;
+}
+
+.content{
+    margin-bottom:10vh;
+}
+
+.contactForm{
+    display:flex;
+    justify-content: left;
+    flex-wrap:wrap;
+    width:70%;
+}

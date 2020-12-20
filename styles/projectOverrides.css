@@ -1,0 +1,66 @@
+.bodyHeader{
+    width:100%;
+    position:relative;
+    margin:10px 0px 40px 0px;
+}
+
+.pageTitle{
+    margin:0;
+    width:100%;
+    text-align:center;
+    position:absolute;
+    border-style:hidden;
+    text-decoration: underline;
+    padding:3px;
+}
+
+.firstPhotoRow{
+    margin:20px 10px;
+}
+
+.firstPhotoRow .figureLabel{
+    display:flex;
+    font-size:10px;
+    opacity:0.8;
+    font-style:italic;
+    width:100%;
+    margin:auto;
+}
+
+.photoRow{
+    width:100%;
+}
+
+.videoRow{
+    width:100%;
+}
+
+.photoRow .figureLabel{
+    display:flex;
+    font-size:10px;
+    opacity:0.8;
+    font-style:italic;
+    width:100%;
+    margin:auto;
+}
+
+.videoRow .figureLabel{
+    display:flex;
+    font-size:10px;
+    opacity:0.8;
+    font-style:italic;
+    width:100%;
+    margin:5px auto;
+}
+
+.textRow{
+    margin: 10px auto;
+}
+
+.subtitle{
+    text-decoration:underline;
+    justify-content: center;
+    width:100%;
+    margin:5px;
+    font-family:Archivo Black;
+}

@@ -1,0 +1,39 @@
+img{
+    margin:auto; 
+    height:250px; 
+    width:250px; 
+    object-fit:cover;
+}
+
+.aboutFlex{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+.photoContainer{
+    display:flex;
+}
+
+.textContainer{
+    margin:15px 0 0 0;
+}   
+
+.text{
+    margin: auto;
+    font-family:Lucida Console;
+    font-size:12px;
+    
+} 
+
+.heading{
+    margin-top:5px;
+}
+
+@media screen and (max-width:768px){
+    .text{
+        max-width:450px;
+    }
+}

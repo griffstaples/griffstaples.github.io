@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Griffin Staples</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--These links and scripts are required to use bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/pageTemplate.css">
+    <link rel="stylesheet" href="../../styles/projectOverrides.css">
+    <link rel="stylesheet" href="../../styles/cryptocurrency.css">
+
+</head>
+<body>
+
+    <div class="pageContainer">
+
+        <!--Header-->
+        <div class="row header">
+            <div class="col headerName">
+                <a href="landing.html">Griffin</a>
+            </div>
+            <div class="col text-right">
+                <div class="headerGroup">
+                    <a class="headerTabs" href="about.html">About</a>
+                    <a class="headerTabs" href="projects.html">Projects</a>
+                    <a class="headerTabs" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+        <!---->
+        
+        <!-- Body -->
+        <div class="row content">
+            
+            <!-- Body Header -->
+            <div class="row bodyHeader">
+                    <div class="pageTitle">
+                            Crypto-Currency Trader
+                    </div>
+                    <div style="position:absolute;">
+                        <a class="" href="projects.html">
+                            <img class="icon" src="../images/left-arrow.png">
+                        </a>
+                    </div>
+                
+            </div>
+            <!---->
+            
+            <div class="row" style="width:100%;">
+                <div class="row firstPhotoRow">
+                    <img src="../images/cryptocurrency/pexels-pixabay-534216.png"
+                         style="width:100%;height:200px;object-fit: cover;">
+                </div>
+                <div class="row subtitle">
+                    Introduction
+                </div>
+                <div class="row textRow">
+                    The purpose of this project was to build a general purpose crypto-currency trader which could automatically trade crypto-currency for profit. While I know little about trading and cryptocurrency, I thought this would be a fun project with the added benefit of possibly making some money. The project described below is certainly unfinished and will be updated intermittently in the future.
+                    
+                </div>
+                
+                <div class="row subtitle">
+                    Methodology
+                </div>
+                <div class="row textRow">
+                    I call this project a crypto-currency trader however its main utility to me and possibly others is as a trader manager. Given my inexperience trading and with cryptocurrency in general, I wanted to build out a framework which would allow me to experiment with different trading strategies (aka traders), possibly multiple at the same time. I decided to do so by building a trader manager, which could be configured to run an arbitrary number of traders with different settings simultaneously. 
+                    
+                    <br><br>
+                    
+                    To describe the basic structure of the code, I created a simple graphic which can be seen below:
+                </div>
+                
+                <div class="photoRow">
+                    <div style="width:100%;display:flex;">
+                        <img src="../images/cryptocurrency/CryptoTraderSchematic.png"
+                             style="margin:auto;width:400px;">
+                    </div>
+                    <div class="figureLabel">
+                        <div style="margin:auto;">
+                            A schematic describing the structure of the cryptocurrency trader.
+                        </div>
+                    </div>
+                </div>
+                <div class="row textRow">
+                    As is visible in the schematic above, there a 3 basic classes in this project, the Trade Manager, Traders (for which there may be multiple), and a Data Manager. 
+                    <br><br>
+                    The role of the data manager is to provide basic methods for data gathering and formatting which traders are likely to use. Any specific data manipulation, such as pre-processing for a given neural network, is implemented in each trader class. 
+                    <br><br>
+                    The role of the trader is to make and execute trade decisions based off historical and current market data gathered with the help of the data manager. Traders make use of the Binance API Wrapper directly to do things like make buy/sell orders. Traders also use the Data Manager and Data Storage layers to gather and update data for use in training and testing their strategies. 
+                    <br><br>
+                    The role of the trade manager is to handle and coordinate multiple traders acting on the same account. This involves ensuring that API request limits are not exceeded and that traders are run in an organized fashion.
+                </div>
+                
+                <div class="row subtitle">
+                    Testing
+                </div>
+                <div class="row textRow">
+                    To build out the trader manager, it was useful to build some simple traders to test and experiment with. The first is a simple linear trader, which performs a linear regression on the last N data points. The second is a simple multi-layer perceptron network which uses the last N data points to make a prediction about the next interval's price. The performance of such traders on historical data is shown below:
+                </div>
+                
+                
+                <div class="photoRow">
+                    <div style="width:100%;display:flex;">
+                        <img src="../images/cryptocurrency/simpleLinear.png"
+                             style="margin:auto;width:400px;">
+                    </div>
+                    <div class="figureLabel">
+                        <div style="margin:auto;">
+                            A plot of the total earnings (scaled) of the simple linear regression trader in blue along with the performance of the market in red.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="photoRow">
+                    <div style="width:100%;display:flex;">
+                        <img src="../images/cryptocurrency/simpleNetwork.png"
+                             style="margin:auto;width:400px;">
+                    </div>
+                    <div class="figureLabel">
+                        <div style="margin:auto;">
+                            A plot of the total earnings (scaled) of the simple network trader in blue along with the performance of the market in red.
+                        </div>
+                    </div>
+                </div>
+                <div class="row textRow">
+                    Ignoring the units for the blue line we can see that both for the linear regression trader and simple network trader, there is a loss. The earnings calculated for the linear and network traders were approximately -118 and -132 respectively and were calculate by assuming that a unitless amount 1 was traded each time the algorithms determined it appropriate.
+                    
+                    <br><br>
+                    
+                    As is clear in the graphs above, the performance is pretty abysmal. However, these are simply test networks and algorithms to ensure the trader manager and data manager are both working. Traders used in reality will need to be much more effective in order to be considered being run.
+                </div>
+                
+                <div class="row subtitle">
+                    More Info
+                </div>
+                <div class="row textRow">
+                    <p>To read more about this project or perhaps to download the source code, please check out the github repo <a href="https://github.com/griffstaples/CryptocurrencyTrader" target="_blank" rel="noopener noreferrer"> <b>here</b></a>.</p>
+                </div>
+                
+                
+                
+                
+            </div>
+        </div>
+        <!---->
+        
+        <!--Footer-->
+        <div class="row footer">
+            <div class="footerContent">
+                <div style="width:100%;">
+                    <div class="iconList">
+                        <a href="https://www.github.com/griffstaples" target="_blank" rel="noopener noreferrer">
+                            <img class="icon" src="../images/github.png">
+                        </a>
+                        <a href="https://www.linkedin.com/in/griffinstaples" target="_blank" rel="noopener noreferrer">
+                            <img class="icon" src="../images/linkedin.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="attribution">
+                    <a href="https://iconscout.com/icons/linkedin" target="_blank" rel="noopener noreferrer">Linkedin Icon</a> and <a href="https://iconscout.com/icons/github" target="_blank" rel="noopener noreferrer">Github Icon</a> by <a href="https://iconscout.com/contributors/alfredo-hernandez" target="_blank" rel="noopener noreferrer">Alfredo Hernandez</a> on <a href="https://iconscout.com" target="_blank" rel="noopener noreferrer">Iconscout</a>
+                </div>
+                <div class="attribution">
+                    <a href="https://iconscout.com/icons/left-arrow" target="_blank">Left Arrow Icon</a> by <a href="https://iconscout.com/contributors/elegant-themes">Elegant Themes</a> on <a href="https://iconscout.com">Iconscout</a>
+                </div>
+            </div>
+        </div>
+        <!---->
+
+
+    </div>
+    
+
+<!-- Javascript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+
+</html>

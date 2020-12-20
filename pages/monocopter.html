@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Griffin Staples</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--These links and scripts are required to use bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/pageTemplate.css">
+    <link rel="stylesheet" href="../../styles/projectOverrides.css">
+    <link rel="stylesheet" href="../../styles/cryptocurrency.css">
+
+</head>
+<body>
+
+    <div class="pageContainer">
+
+        <!--Header-->
+        <div class="row header">
+            <div class="col headerName">
+                <a href="landing.html">Griffin</a>
+            </div>
+            <div class="col text-right">
+                <div class="headerGroup">
+                    <a class="headerTabs" href="about.html">About</a>
+                    <a class="headerTabs" href="projects.html">Projects</a>
+                    <a class="headerTabs" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+        <!---->
+        
+        <!-- Body -->
+        <div class="row content">
+            
+            <!-- Body Header -->
+            <div class="row bodyHeader">
+                    <div class="pageTitle">
+                            Monocopter
+                    </div>
+                    <div style="position:absolute;">
+                        <a class="" href="projects.html">
+                            <img class="icon" src="../images/left-arrow.png">
+                        </a>
+                    </div>
+                
+            </div>
+            <!---->
+            
+            <div class="row" style="width:100%;">
+                <div class="row firstPhotoRow">
+                    <img src="../images/monocopter/monoIntro.png"
+                         style="width:100%;height:200px;object-fit: cover;">
+                </div>
+                <div class="row subtitle">
+                    Introduction
+                </div>
+                <div class="row textRow">
+                    The following monocopter project was one of the projects I worked on as a Research Assistant at the Royal Military College of Canada (RMC). The purpose of the monocopter was to function as an educational tool for undergraduate students and to be used to test the lift produced by a wing without the need for a wind tunnel.
+                </div>
+                
+                <div class="row subtitle">
+                    Project Description
+                </div>
+                <div class="row textRow">
+                    When I started work on this project, much of the groundwork had been laid out. The size, rotation rate, wing shape and required weight were parameters that had already been determined by my supervisor Dr. Ruben E. Perez. My task was to design and build the avionics for the monocopter. The final design had to be controllable with a standard RC transmitter, be able to wirelessly transmit sensor data back to a computer, and have a weight less than 400 grams (total max weight of monocopter). 
+                </div>
+                
+                <div class="row subtitle">
+                    Monocopter Design
+                </div>
+                <div class="row textRow">
+                    The avionics were built around the Arduino Nano. Wireless data transmission was done with the HC-05 bluetooth module which allowed for simple, direct communication with a laptop. The sensor module used to determine the position, and speed of the monocopter was the MPU9250 9-axis sensor (an all in one gyro, accelerometer and compass). A standard RC receiver was use to read the signal coming from the radio controller. However, output from the reciever was not plugged directly into the motor given the need to modify the incoming signal for moncopter control.
+                </div>
+                
+                <div class="row subtitle">
+                    Controlling Direction
+                </div>
+                <div class="row textRow">
+                    In order to control the direction of travelling for a monocopter it is important to understand gyroscopic precession. Gyroscopic precession is the deflection of a spinning object approximately 90° out of phase from where the force is applied. Below is a schematic showing how this effects the control of the monocopter:
+                </div>
+                
+                <div class="photoRow">
+                    <div style="width:100%;display:flex;">
+                        <img src="../images/monocopter/monocopterSchematic.png"
+                             style="margin:auto;width:400px;">
+                    </div>
+                    <div class="figureLabel">
+                        <div style="margin:auto;">
+                            A diagram showing the effect of gyroscopic precession.
+                        </div>
+                    </div>
+                </div>
+                <div class="row textRow">
+                    Extra thrust can be applied in 2 main ways: by cyclically adjusting the pitch of the monocopter wing or by cyclically adjusting the speed of the monocopter rotation. To reduce additional weight and complexity caused by creating a servo and flap mechanism on the wing, I chose to cyclically control the speed of rotation. As the RC recievers typically have outputs to control servos on RC planes, these PWM signals had to be fed into the arduino whereby and mapped to a given thrust location and speed.
+                </div>
+                
+                <div class="row subtitle">
+                    Testing
+                </div>
+                <div class="row textRow">
+                    Upon building the monocopter, it was attached to a guide wire and allowed to fly. Initial tests only involved using the throttle. With these tests we were able to confirm the basic mechanical functioning of the monocopter as well as test the data acquisition and start-up routine of the monocopter. A video of one such test flight is shown below:
+                </div>
+                
+                <div class="videoRow">
+                    <video style="width:400px;height:400px;object-fit: cover; display:flex;margin:auto;" controls>
+                        <source src="../images/monocopter/testflight.mp4" type="video/mp4">
+                        Your browser does not support the video tag
+                    </video>
+                    <div class="figureLabel">
+                        <div style="margin:auto;">
+                            A plot of the total earnings (scaled) of the simple network trader in blue along with the performance of the market in red.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row subtitle">
+                    Future Work
+                </div>
+                <div class="row textRow">
+                    The direction control of the monocopter has not been fully worked out. Initial tests showed that the cyclic rotation rate increases of the monocopter wing were not sufficient to accurately control the monocopter flight direction. We suspect that this is due to a poor quality ESC and motor which might effect how quickly the motor can throttle up and throttle back down.Therefore future work on this project would likely involve trying out a better ESC/motor combination or adding a flap to the monocopter wing.
+                </div>
+                
+                
+            </div>
+        </div>
+        <!---->
+        
+        <!--Footer-->
+        <div class="row footer">
+            <div class="footerContent">
+                <div style="width:100%;">
+                    <div class="iconList">
+                        <a href="https://www.github.com/griffstaples" target="_blank" rel="noopener noreferrer">
+                            <img class="icon" src="../images/github.png">
+                        </a>
+                        <a href="https://www.linkedin.com/in/griffinstaples" target="_blank" rel="noopener noreferrer">
+                            <img class="icon" src="../images/linkedin.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="attribution">
+                    <a href="https://iconscout.com/icons/linkedin" target="_blank" rel="noopener noreferrer">Linkedin Icon</a> and <a href="https://iconscout.com/icons/github" target="_blank" rel="noopener noreferrer">Github Icon</a> by <a href="https://iconscout.com/contributors/alfredo-hernandez" target="_blank" rel="noopener noreferrer">Alfredo Hernandez</a> on <a href="https://iconscout.com" target="_blank" rel="noopener noreferrer">Iconscout</a>
+                </div>
+                <div class="attribution">
+                    <a href="https://iconscout.com/icons/left-arrow" target="_blank">Left Arrow Icon</a> by <a href="https://iconscout.com/contributors/elegant-themes">Elegant Themes</a> on <a href="https://iconscout.com">Iconscout</a>
+                </div>
+            </div>
+        </div>
+        <!---->
+
+
+    </div>
+    
+
+<!-- Javascript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+
+</html>
