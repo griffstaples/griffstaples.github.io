@@ -19,13 +19,19 @@ function App() {
             <Route exact path="/" component={About}></Route>
             <Route exact path="/about" component={About}></Route>
             <Route exact path="/projects" component={Projects}></Route>
-            <Route path="/contact" component={Contact}></Route>
-            <Route path="/projects/monocopter" component={Monocopter}></Route>
+            <Route exact path="/contact" component={Contact}></Route>
             <Route
+              exact
+              path="/projects/monocopter"
+              component={Monocopter}
+            ></Route>
+            <Route
+              exact
               path="/projects/cryptotrader"
               component={CryptoTrader}
             ></Route>
             <Route
+              exact
               path="/projects/bloodpressure"
               component={BloodPressure}
             ></Route>
