@@ -13,7 +13,7 @@ import styles from "./Header.module.css";
 export function Header() {
   return (
     <div fluid className={styles.headerContainer}>
-      <Navbar className={styles.navbarCustom}>
+      <Navbar className={styles.navbarCustom} expand="sm">
         <Navbar.Brand href="/about">Griffin Staples</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
