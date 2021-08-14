@@ -6,7 +6,7 @@ import { Contact } from "./components/Contact/Contact";
 import { Monocopter } from "./components/Monocopter/Monocopter";
 import { CryptoTrader } from "./components/CryptoTrader/CryptoTrader";
 import { BloodPressure } from "./components/BloodPressure/BloodPressure";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import styles from "./App.module.css";
 
 function App() {
