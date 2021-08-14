@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Crypto-Currency Trader",
+    "hoverText": "A Python project to build an automatic crypto-currency Trader",
+    "imageUrl": "/images/projects/pexels-marta-branco-1263324.png",
+    "projectPageLink": "/projects/cryptotrader"
+  },
+  {
+    "name": "Blood Pressure Monitor",
+    "hoverText": "My 4th year engineering physics design thesis on the development and analysis of an effective blood pressure monitoring device",
+    "imageUrl": "/images/projects/pexels-kelly-lacy-2881154.png",
+    "projectPageLink": "/projects/bloodpressure"
+  },
+  {
+    "name": "Monocopter",
+    "hoverText": "A single-bladed helicopter built for research and educational purposes",
+    "imageUrl": "/images/projects/pexels-pixabay-40026.png",
+    "projectPageLink": "/projects/monocopter"
+  }
+]

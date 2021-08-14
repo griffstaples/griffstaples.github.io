@@ -1,0 +1,14 @@
+.appContainer {
+  max-width: 1100px;
+  margin: auto;
+}
+.contentContainer {
+  max-width: 1000px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1050px) {
+  .contentContainer {
+    margin: 0px 25px;
+  }
+}
