@@ -23,7 +23,7 @@ export function Monocopter() {
     <ProjectPage projectDetails={projectDetails}>
       <ProjectTitle>Monocopter</ProjectTitle>
       <ProjectSubTitle> </ProjectSubTitle>
-      <ProjectImageIntro imageUrl={"../images/monocopter/monoIntro.png"} />
+      <ProjectImageIntro imageUrl={"../images/monocopter/monoIntro.jpg"} />
       <SectionHeader>Introduction</SectionHeader>
       <ProjectParagraph>
         The following monocopter project was one of the projects I worked on as

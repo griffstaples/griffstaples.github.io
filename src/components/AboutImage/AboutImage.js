@@ -6,10 +6,10 @@ export function AboutImage() {
     <div className={styles.imageContainer}>
       <img
         className={styles.imageStyle}
-        src="/images/about/headshot.png"
+        src="/images/about/headshot.jpg"
         alt="portrait of myself"
       ></img>
     </div>
-    // <Image src="/images/about/headshot.png"></Image>
+    // <Image src="/images/about/headshot.jpg"></Image>
   );
 }

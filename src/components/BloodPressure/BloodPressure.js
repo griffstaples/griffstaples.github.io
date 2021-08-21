@@ -22,7 +22,7 @@ export function BloodPressure() {
     <ProjectPage projectDetails={projectDetails}>
       <ProjectTitle>Design of a New Blood-Pressure Monitor</ProjectTitle>
       <ProjectSubTitle> </ProjectSubTitle>
-      <ProjectImageIntro imageUrl={"../images/bloodpressure/bpIntro.png"} />
+      <ProjectImageIntro imageUrl={"../images/bloodpressure/bpIntro.jpg"} />
       <SectionHeader>Introduction</SectionHeader>
       <ProjectParagraph>
         Technology in the field of blood pressure monitoring has remained

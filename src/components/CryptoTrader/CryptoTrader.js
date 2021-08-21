@@ -23,7 +23,7 @@ export function CryptoTrader() {
       <ProjectTitle>Monocopter</ProjectTitle>
       <ProjectSubTitle> </ProjectSubTitle>
       <ProjectImageIntro
-        imageUrl={"../images/cryptoCurrency/cryptoIntro.png"}
+        imageUrl={"../images/cryptoCurrency/cryptoIntro.jpg"}
       />
       <SectionHeader>Introduction</SectionHeader>
       <ProjectParagraph>
