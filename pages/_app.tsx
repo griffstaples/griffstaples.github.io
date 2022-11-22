@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
             font-family: ${robotoFlex.style.fontFamily};
             color: white;
             margin: 0;
+            height: 100%;
           }
         `}
       </style>
