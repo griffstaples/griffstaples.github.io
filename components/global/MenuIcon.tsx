@@ -19,10 +19,10 @@ export const MenuIcon: React.FC<Props> = ({ size, stroke, fill }) => {
         y2="105.643"
         fill={fill || "none"}
         stroke={stroke || "#FFF"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="2.613"
-        stroke-width="13.417"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="2.613"
+        strokeWidth="13.417"
       />
       <line
         x1="26.7"
@@ -31,10 +31,10 @@ export const MenuIcon: React.FC<Props> = ({ size, stroke, fill }) => {
         y2="256.511"
         fill={fill || "none"}
         stroke={stroke || "#FFF"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="2.613"
-        stroke-width="13.417"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="2.613"
+        strokeWidth="13.417"
       />
       <line
         x1="26.7"
@@ -43,10 +43,10 @@ export const MenuIcon: React.FC<Props> = ({ size, stroke, fill }) => {
         y2="407.312"
         fill={fill || "none"}
         stroke={stroke || "#FFF"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="2.613"
-        stroke-width="13.417"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="2.613"
+        strokeWidth="13.417"
       />
     </svg>
   );

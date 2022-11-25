@@ -15,10 +15,10 @@ const StyledButton = styled.button`
   font-family: ${sourceCodePro.style.fontFamily};
 
   &:hover {
-    border-color: ${Colours.NeonBlue};
-    opacity: 0.5;
-    cursor: pointer;
-    transition: ease-in 0.2s;
+    border-color: ${Colours.TextRegular};
+    box-shadow: 0px 0px 5px 5px ${Colours.NeonBlue};
+    transition: ease-in 0.15s;
+    color: ${Colours.NeonBlue};
   }
 `;
 

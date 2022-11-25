@@ -1,7 +1,10 @@
+import { useCustomCursor } from "hooks/useCustomCursor";
 import type { AppProps } from "next/app";
 import { robotoFlex } from "styles/Fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const CustomCursor = useCustomCursor();
+
   return (
     <>
       <style jsx global>
@@ -13,9 +16,13 @@ export default function App({ Component, pageProps }: AppProps) {
             margin: 0;
             height: 100%;
           }
+          * {
+            cursor: none !important;
+          }
         `}
       </style>
-      <Component {...pageProps} />
+      {CustomCursor}
+      <Component {...pageProps}></Component>
     </>
   );
 }
