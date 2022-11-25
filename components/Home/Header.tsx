@@ -29,12 +29,20 @@ const NavOptionList = styled.ul`
     display: block;
   }
 `;
-const NavOption = styled.li`
+
+const OptionWidth = "48px";
+const OptionHeight = "48px";
+
+const NavOption = styled.li.attrs({ className: "hoverMouse" })`
   list-style-type: none;
-  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
   padding: 0 8px;
 `;
+
 const OptionText = styled.div`
+  align-items: center;
   font-family: ${sourceCodePro.style.fontFamily};
   font-size: 12px;
   &:hover {

@@ -6,6 +6,7 @@ const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 90vh;
 `;
 
 const MainTextContainer = styled.div`
