@@ -7,7 +7,7 @@ import ProjectsSection from "components/home/ProjectsSection";
 import ContactSection from "components/home/ContactSection";
 import HomeSection from "components/home/HomeSection";
 import Footer from "components/home/Footer";
-import { SectionDivider as CustomSectionDivier } from "components/global/SectionDivider";
+import { SectionDivider } from "components/global/SectionDivider";
 
 const PageWrapper = styled.div`
   background-image: linear-gradient(
@@ -31,14 +31,12 @@ const SectionDividerConfig = {
     width: 1,
     spacing: 45,
   },
+  stroke: Colours.GunMetalBlue,
 };
 
 const ContentWrapper = styled.div`
-  width: 800px;
-`;
-
-const SectionDivider = styled.div`
-  height: 100px;
+  width: 100%;
+  max-width: 800px;
 `;
 
 const HomePageContent: React.FC = () => {
@@ -47,11 +45,11 @@ const HomePageContent: React.FC = () => {
       <ContentWrapper>
         <Header />
         <HomeSection />
-        <CustomSectionDivier {...SectionDividerConfig} />
+        <SectionDivider {...SectionDividerConfig} />
         <AboutSection />
-        <SectionDivider />
+        <SectionDivider {...SectionDividerConfig} />
         <ProjectsSection />
-        <SectionDivider />
+        <SectionDivider {...SectionDividerConfig} />
         <ContactSection />
         <Footer />
       </ContentWrapper>
