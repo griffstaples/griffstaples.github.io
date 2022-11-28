@@ -1,10 +1,19 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";
 
 const DOTSIZE = 5;
 const LARGEDOTSIZE = 20;
 const CIRCLESIZE = 30;
+
+const CursorContainer = styled.div<{ hasMouseMoved: boolean }>`
+  display: none;
+
+  @media (min-width: ${Breakpoints.small}) {
+    display: ${(props) => (props.hasMouseMoved ? "block" : "none")};
+  }
+`;
 
 const CustomCursorCircle = styled.div`
   position: absolute;
@@ -62,7 +71,7 @@ export const useCustomCursor = () => {
   }, []);
 
   return (
-    <>
+    <CursorContainer hasMouseMoved={!(mouseY === 0 && mouseX === 0)}>
       <CustomCursorCircle
         style={{
           transform: `translate(${mouseX - CIRCLESIZE / 2 - 0 / 2 - 1}px, ${
@@ -83,6 +92,6 @@ export const useCustomCursor = () => {
           pointerEvents: "none",
         }}
       />
-    </>
+    </CursorContainer>
   );
 };

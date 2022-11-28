@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Colours } from "styles/Colours";
 import Header from "components/home/Header";
-import AboutSection from "components/home/AboutSection";
+import AboutSection from "components/home/about/AboutSection";
 import ProjectsSection from "components/home/ProjectsSection";
 import ContactSection from "components/home/ContactSection";
 import HomeSection from "components/home/HomeSection";
