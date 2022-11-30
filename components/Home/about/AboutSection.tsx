@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Button from "components/global/SeeMoreButton";
+import SeeMoreButton from "components/global/SeeMoreButton";
 import { sourceCodePro } from "styles/Fonts";
 import { Colours } from "styles/Colours";
 import { Breakpoints } from "styles/Breakpoints";
-import { AboutImageCard } from "./AboutImageCard";
-import { TagList } from "components/global/TagList";
+import { AboutImageCard } from "components/home/about/AboutImageCard";
+import { SectionTitle } from "components/home/SectionTitle";
 
 const AboutContainer = styled.div`
   width: 100%;
@@ -57,36 +57,6 @@ const ProfileImageCard = styled.div`
   border-radius: 4px;
 `;
 
-const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 16px;
-`;
-
-const TitleText = styled.h2`
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-`;
-
-const TitleUnderline = styled.div`
-  width: 48px;
-  height: 8px;
-  background-color: ${Colours.TextRegular};
-  margin-bottom: 32px;
-`;
-
-const Title: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-    <TitleContainer>
-      <TitleText>{children}</TitleText>
-      <TitleUnderline />
-    </TitleContainer>
-  );
-};
-
 const TagListContainer = styled.div`
   width: 100%;
   display: none;
@@ -102,7 +72,7 @@ interface Props {}
 const AboutSection: React.FC<Props> = () => {
   return (
     <AboutContainer>
-      <Title>About</Title>
+      <SectionTitle id="about-title">About</SectionTitle>
       <ContentAndImageContainer>
         <AboutContent>
           <PersonalDescription>
@@ -120,7 +90,7 @@ const AboutSection: React.FC<Props> = () => {
           <AboutImageCard></AboutImageCard>
         </ProfileImageCard>
       </ContentAndImageContainer>
-      <Button onClick={() => {}}>See more</Button>
+      <SeeMoreButton onClick={() => {}}>See more</SeeMoreButton>
     </AboutContainer>
   );
 };

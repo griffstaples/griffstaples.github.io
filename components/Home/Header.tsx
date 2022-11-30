@@ -3,6 +3,7 @@ import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";
 import { sourceCodePro } from "styles/Fonts";
 import MenuOptions from "components/home/MenuOptions";
+import { useCallback } from "react";
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -51,22 +52,28 @@ const OptionText = styled.div`
 `;
 
 const Header: React.FC = () => {
+  const scrollToID = useCallback((id: string) => {
+    document?.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
     <HeaderWrapper>
       <MainTextContainer>
         <MainText>Griffin Staples</MainText>
       </MainTextContainer>
       <NavOptionList>
-        <NavOption>
-          <OptionText>about</OptionText>
-        </NavOption>
-        <NavOption>
+        <NavOption
+          onClick={() => document?.body?.scrollIntoView({ behavior: "smooth" })}
+        >
           <OptionText>home</OptionText>
         </NavOption>
-        <NavOption>
+        <NavOption onClick={() => scrollToID("about-title")}>
+          <OptionText>about</OptionText>
+        </NavOption>
+        <NavOption onClick={() => scrollToID("project-title")}>
           <OptionText>projects</OptionText>
         </NavOption>
-        <NavOption>
+        <NavOption onClick={() => scrollToID("contact-title")}>
           <OptionText>contact</OptionText>
         </NavOption>
       </NavOptionList>

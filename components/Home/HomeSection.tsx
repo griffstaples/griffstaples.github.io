@@ -2,6 +2,7 @@ import { DownArrowIcon } from "components/global/DownArrowIcon";
 import styled, { keyframes } from "styled-components";
 import { TypingLetters } from "components/home/TypingLetters";
 import { sourceCodePro } from "styles/Fonts";
+import { Breakpoints } from "styles/Breakpoints";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -22,9 +23,13 @@ const MainTextContainer = styled.div`
 `;
 const TitleText = styled.h1`
   text-align: center;
-  font-size: 64px;
+  font-size: 32px;
   margin: 0;
   font-family: ${sourceCodePro};
+
+  @media (min-width: ${Breakpoints.small}) {
+    font-size: 64px;
+  }
 `;
 const fadeIn = keyframes`
   from {

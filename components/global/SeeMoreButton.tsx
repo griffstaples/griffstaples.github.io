@@ -25,10 +25,15 @@ const StyledButton = styled.button`
 interface Props {
   onClick: () => void;
   children: React.ReactNode;
+  className?: string;
 }
 
-const SeeMoreButton: React.FC<Props> = ({ onClick, children }) => {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+const SeeMoreButton: React.FC<Props> = ({ onClick, children, className }) => {
+  return (
+    <StyledButton className={className} onClick={onClick}>
+      {children}
+    </StyledButton>
+  );
 };
 
 export default SeeMoreButton;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Colours } from "styles/Colours";
 import Header from "components/home/Header";
 import AboutSection from "components/home/about/AboutSection";
-import ProjectsSection from "components/home/ProjectsSection";
+import ProjectSection from "components/home/projects/ProjectSection";
 import ContactSection from "components/home/ContactSection";
 import HomeSection from "components/home/HomeSection";
 import Footer from "components/home/Footer";
@@ -48,7 +48,7 @@ const HomePageContent: React.FC = () => {
         <SectionDivider {...SectionDividerConfig} />
         <AboutSection />
         <SectionDivider {...SectionDividerConfig} />
-        <ProjectsSection />
+        <ProjectSection />
         <SectionDivider {...SectionDividerConfig} />
         <ContactSection />
         <Footer />

@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import styled, { keyframes } from "styled-components";
+import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";
+import { archivoNarrow } from "styles/Fonts";
 
 const Container = styled.div`
   display: flex;
   justify-content: left;
+  font-family: ${archivoNarrow.style.fontFamily};
 `;
 
 const BlinkAnimation = keyframes`
@@ -22,13 +25,17 @@ const BlinkAnimation = keyframes`
 
 const Block = styled.div<{ isBlinking: boolean }>`
   display: inline-block;
-  width: 50px;
-  height: 65px;
+  width: 22px;
+  height: 32.5px;
   background-color: ${Colours.TextRegular};
   animation: ${(props) => (props.isBlinking ? BlinkAnimation : null)};
   animation-duration: 1.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  @media (min-width: ${Breakpoints.small}) {
+    width: 50px;
+    height: 65px;
+  }
 `;
 
 interface Props {
