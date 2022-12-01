@@ -1,11 +1,14 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { Colours } from "styles/Colours";
 import { sourceCodePro } from "styles/Fonts";
 
-const StyledButton = styled.button`
-  height: 32px;
-  padding: 8px 16px;
-  border-radius: 16px;
+const LinkContainer = styled.div``;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  padding: 8px 32px;
+  border-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,17 +26,17 @@ const StyledButton = styled.button`
 `;
 
 interface Props {
-  onClick: () => void;
+  href: string;
   children: React.ReactNode;
   className?: string;
 }
 
-const SeeMoreButton: React.FC<Props> = ({ onClick, children, className }) => {
+const ButtonLink: React.FC<Props> = ({ href, children, className }) => {
   return (
-    <StyledButton className={className} onClick={onClick}>
+    <StyledLink href={href} className={className}>
       {children}
-    </StyledButton>
+    </StyledLink>
   );
 };
 
-export default SeeMoreButton;
+export default ButtonLink;

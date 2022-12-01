@@ -1,4 +1,4 @@
-import SeeMoreButton from "components/global/SeeMoreButton";
+import ButtonLink from "components/global/ButtonLink";
 import Image from "next/image";
 import styled from "styled-components";
 import { Breakpoints } from "styles/Breakpoints";
@@ -52,7 +52,7 @@ const DescriptionContainer = styled.div`
 
 const Description = styled.div``;
 
-const StyledSeeMoreButton = styled(SeeMoreButton)`
+const StyledSeeMoreButton = styled(ButtonLink)`
   margin-bottom: 16px;
 `;
 
@@ -108,7 +108,7 @@ const ProjectsSection: React.FC<Props> = () => {
           helicopter (AKA monocopter).
         </DescriptionContainer>
       </ProjectContentContainer>
-      <StyledSeeMoreButton onClick={() => {}}>See more</StyledSeeMoreButton>
+      <StyledSeeMoreButton href="/projects">See more</StyledSeeMoreButton>
     </ProjectsContainer>
   );
 };

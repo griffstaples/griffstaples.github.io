@@ -1,5 +1,6 @@
 import { useCustomCursor } from "hooks/useCustomCursor";
 import type { AppProps } from "next/app";
+import { Colours } from "styles/Colours";
 import { robotoFlex } from "styles/Fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -16,6 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
             margin: 0;
             padding: 0;
             height: 100%;
+            line-height: 1.3;
+            background-color: ${Colours.BackgroundColorDark};
           }
           * {
             cursor: none !important;

@@ -8,6 +8,7 @@ import ContactSection from "components/home/ContactSection";
 import HomeSection from "components/home/HomeSection";
 import Footer from "components/home/Footer";
 import { SectionDivider } from "components/global/SectionDivider";
+import { MenuIcon, DownArrow } from "components/global/Attributions";
 
 const PageWrapper = styled.div`
   background-image: linear-gradient(
@@ -51,7 +52,12 @@ const HomePageContent: React.FC = () => {
         <ProjectSection />
         <SectionDivider {...SectionDividerConfig} />
         <ContactSection />
-        <Footer />
+        <Footer>
+          <>
+            <MenuIcon />
+            <DownArrow />
+          </>
+        </Footer>
       </ContentWrapper>
     </PageWrapper>
   );

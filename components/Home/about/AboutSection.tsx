@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SeeMoreButton from "components/global/SeeMoreButton";
+import SeeMoreButton from "components/global/Button";
 import { sourceCodePro } from "styles/Fonts";
 import { Colours } from "styles/Colours";
 import { Breakpoints } from "styles/Breakpoints";

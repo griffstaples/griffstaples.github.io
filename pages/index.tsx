@@ -11,7 +11,7 @@ export default function Home() {
           name="description"
           content="Griffin Staples, Software Developer"
         />
-        <link rel="icon" href="/galaxy.png" />
+        <link rel="icon" href="/galaxy.svg" />
       </Head>
       <main>
         <HomePageContent />
