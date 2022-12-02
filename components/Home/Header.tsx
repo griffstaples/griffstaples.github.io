@@ -3,7 +3,15 @@ import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";
 import { sourceCodePro } from "styles/Fonts";
 import MenuOptions from "components/home/MenuOptions";
-import { useCallback } from "react";
+import { useScrollToId } from "hooks/useScrollToId";
+
+// Link now refers to where we scroll to on this page
+// Link will refer to where we redirect to later
+const MENU_OPTIONS = [
+  { id: "about", name: "about", link: "about-title" },
+  { id: "projects", name: "projects", link: "project-title" },
+  { id: "contact", name: "contact", link: "contact-title" },
+];
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -31,9 +39,6 @@ const NavOptionList = styled.ul`
   }
 `;
 
-const OptionWidth = "48px";
-const OptionHeight = "48px";
-
 const NavOption = styled.li.attrs({ className: "hoverMouse" })`
   list-style-type: none;
   justify-content: center;
@@ -52,9 +57,7 @@ const OptionText = styled.div`
 `;
 
 const Header: React.FC = () => {
-  const scrollToID = useCallback((id: string) => {
-    document?.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  }, []);
+  const scrollToId = useScrollToId();
 
   return (
     <HeaderWrapper>
@@ -62,25 +65,18 @@ const Header: React.FC = () => {
         <MainText>Griffin Staples</MainText>
       </MainTextContainer>
       <NavOptionList>
-        <NavOption
-          onClick={() => document?.body?.scrollIntoView({ behavior: "smooth" })}
-        >
-          <OptionText>home</OptionText>
-        </NavOption>
-        <NavOption onClick={() => scrollToID("about-title")}>
+        <NavOption onClick={() => scrollToId("about-title")}>
           <OptionText>about</OptionText>
         </NavOption>
-        <NavOption onClick={() => scrollToID("project-title")}>
+        <NavOption onClick={() => scrollToId("project-title")}>
           <OptionText>projects</OptionText>
         </NavOption>
-        <NavOption onClick={() => scrollToID("contact-title")}>
+        <NavOption onClick={() => scrollToId("contact-title")}>
           <OptionText>contact</OptionText>
         </NavOption>
       </NavOptionList>
       <MenuOptionsContainer>
-        <MenuOptions
-          options={[{ id: "About", name: "About", onClick: () => {} }]}
-        />
+        <MenuOptions options={MENU_OPTIONS} />
       </MenuOptionsContainer>
     </HeaderWrapper>
   );

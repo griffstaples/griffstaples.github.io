@@ -1,12 +1,19 @@
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLElement> {
   size: number;
   stroke?: string;
   fill?: string;
+  className?: string;
 }
 
-export const MenuIcon: React.FC<Props> = ({ size, stroke, fill }) => {
+export const MenuIcon: React.FC<Props> = ({
+  size,
+  stroke,
+  fill,
+  className,
+}) => {
   return (
     <svg
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}

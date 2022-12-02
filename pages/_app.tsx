@@ -19,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
             height: 100%;
             line-height: 1.3;
             background-color: ${Colours.BackgroundColorDark};
+            overflow-x: hidden;
           }
           * {
             cursor: none !important;
