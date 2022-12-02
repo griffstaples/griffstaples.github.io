@@ -23,14 +23,19 @@ const StyledButton = styled.button`
 `;
 
 interface Props {
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
   className?: string;
+  type?: "button" | "reset" | "submit";
 }
 
-const Button: React.FC<Props> = ({ onClick, children, className }) => {
+const Button: React.FC<Props> = ({ onClick, children, className, type }) => {
   return (
-    <StyledButton className={className} onClick={onClick}>
+    <StyledButton
+      className={className}
+      onClick={onClick}
+      type={type || "button"}
+    >
       {children}
     </StyledButton>
   );

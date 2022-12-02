@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Colours } from "styles/Colours";
 import { sourceCodePro } from "styles/Fonts";
 import { SectionTitle } from "./SectionTitle";
 import Button from "components/global/Button";
+import { Breakpoints } from "styles/Breakpoints";
 
 const ContactsContainer = styled.div`
   display: flex;
@@ -17,6 +17,10 @@ const ContactForm = styled.form``;
 
 const InputContainer = styled.div`
   margin: 16px 0;
+  width: 240px;
+  @media (min-width: ${Breakpoints.small}) {
+    width: 360px;
+  }
 `;
 
 const FormInputContainer = styled.div`
@@ -35,7 +39,6 @@ const FormTextInput = styled.input`
   border: none;
   font-family: ${sourceCodePro.style.fontFamily};
   height: 32px;
-  width: 240px;
   padding-left: 8px;
 `;
 
@@ -80,9 +83,9 @@ const FormTextAreaLabel = styled.label`
 const CustomFormTextArea = styled.textarea`
   border: none;
   border-radius: 4px;
-  padding-left: 8px;
-  width: 240px;
+  padding: 8px 8px;
   height: 120px;
+  font-family: ${sourceCodePro.style.fontFamily};
 `;
 
 interface FormTextAreaProps {
