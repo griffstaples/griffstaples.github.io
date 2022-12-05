@@ -1,6 +1,5 @@
 import ButtonLink from "components/global/ButtonLink";
 import { TagList } from "components/global/TagList";
-import Image from "next/image";
 import styled from "styled-components";
 import { Breakpoints } from "styles/Breakpoints";
 import { sourceCodePro } from "styles/Fonts";
@@ -83,7 +82,7 @@ const ProjectsSection: React.FC<Props> = () => {
       <ProjectTitle textPosition="left">Crypto-Currency Trader</ProjectTitle>
       <ProjectContentContainer>
         <ImageContainer>
-          <Image
+          <img
             width={256}
             height={CryptoImageHeight}
             alt="Crypto Currency Trader Schematic"
@@ -103,7 +102,7 @@ const ProjectsSection: React.FC<Props> = () => {
       <ProjectTitle textPosition="right">Bloor Pressure Monitor</ProjectTitle>
       <ProjectContentContainer textPosition="right">
         <ImageContainer>
-          <Image
+          <img
             width={256}
             height={175}
             alt="Blood Pressure Monitor Schematic"

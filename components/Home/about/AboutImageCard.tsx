@@ -1,5 +1,4 @@
 import { TagList } from "components/global/TagList";
-import Image from "next/image";
 import styled from "styled-components";
 import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";
@@ -26,7 +25,7 @@ const CircularImageContainer = styled.div`
   box-shadow: 0px 0px 5px 5px ${Colours.BackgroundColorDark};
 `;
 
-const StyledImage = styled(Image)`
+const StyledImage = styled.img`
   position: absolute;
   top: 9px;
   width: 140px;
