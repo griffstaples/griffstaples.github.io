@@ -26,11 +26,12 @@ const Tag = styled.li`
 
 interface Props {
   tags: Array<string>;
+  className?: string;
 }
 
-export const TagList: React.FC<Props> = ({ tags }) => {
+export const TagList: React.FC<Props> = ({ tags, className }) => {
   return (
-    <TagsContainer>
+    <TagsContainer className={className}>
       {tags.map((tag) => (
         <Tag>{tag}</Tag>
       ))}

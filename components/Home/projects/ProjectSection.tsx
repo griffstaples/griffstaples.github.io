@@ -1,10 +1,22 @@
 import ButtonLink from "components/global/ButtonLink";
+import { TagList } from "components/global/TagList";
 import Image from "next/image";
 import styled from "styled-components";
 import { Breakpoints } from "styles/Breakpoints";
 import { sourceCodePro } from "styles/Fonts";
 import { SectionTitle } from "../SectionTitle";
 import { ProjectTitle } from "./ProjectTitle";
+
+const CryptoImageHeight = 231;
+const BPMonitorHeight = 175;
+const MonocopterHeight = 455;
+
+const StyledTagList = styled(TagList)`
+  li {
+    /* border: none;
+    opacity: 0.5; */
+  }
+`;
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -15,7 +27,6 @@ const ProjectsContainer = styled.div`
 `;
 
 const ProjectContentContainer = styled.div<{ textPosition?: "left" | "right" }>`
-  /* width: 100%; */
   padding: 0 32px;
   display: flex;
   flex-direction: column;
@@ -30,7 +41,7 @@ const ProjectContentContainer = styled.div<{ textPosition?: "left" | "right" }>`
     /* flex-direction: row; */
     column-gap: 32px;
     justify-content: start;
-    align-items: start;
+    align-items: center;
   }
 `;
 
@@ -45,10 +56,19 @@ const StyledVideo = styled.video`
   border-radius: 8px;
 `;
 
+const DescriptionAndTagsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  height: 100%;
+`;
+
 const DescriptionContainer = styled.div`
-  /* display */
   font-family: ${sourceCodePro.style.fontFamily};
 `;
+
+const TagsContainer = styled.div``;
 
 const Description = styled.div``;
 
@@ -67,15 +87,20 @@ const ProjectsSection: React.FC<Props> = () => {
         <ImageContainer>
           <Image
             width={256}
-            height={231}
+            height={CryptoImageHeight}
             alt="Crypto Currency Trader Schematic"
             src="/projects/CryptoTraderSchematic_smaller.png"
           />
         </ImageContainer>
-        <DescriptionContainer>
-          This project takes advantage of Binance's API to trade crypto currency
-          following an algorithm.
-        </DescriptionContainer>
+        <DescriptionAndTagsContainer style={{ height: CryptoImageHeight }}>
+          <DescriptionContainer>
+            This project takes advantage of Binance's API to trade crypto
+            currency following an algorithm.
+          </DescriptionContainer>
+          <TagsContainer>
+            <StyledTagList tags={["Python", "keras", "BinanceAPI"]} />
+          </TagsContainer>
+        </DescriptionAndTagsContainer>
       </ProjectContentContainer>
       <ProjectTitle textPosition="right">Bloor Pressure Monitor</ProjectTitle>
       <ProjectContentContainer textPosition="right">
@@ -87,11 +112,16 @@ const ProjectsSection: React.FC<Props> = () => {
             src="/projects/bpschematic_smaller.png"
           />
         </ImageContainer>
-        <DescriptionContainer>
-          For my 4th year undegraduate thesis I designed a blood pressure
-          monitor which measured blood pressure using an optical signal as
-          opposed to the traditional auscultatory method.
-        </DescriptionContainer>
+        <DescriptionAndTagsContainer style={{ height: BPMonitorHeight }}>
+          <DescriptionContainer>
+            For my 4th year undegraduate thesis I designed a blood pressure
+            monitor which measured blood pressure using an optical signal as
+            opposed to the traditional auscultatory method.
+          </DescriptionContainer>
+          <TagsContainer>
+            <StyledTagList tags={["Python", "keras", "numpy"]} />
+          </TagsContainer>
+        </DescriptionAndTagsContainer>
       </ProjectContentContainer>
       <ProjectTitle textPosition="left">Monocopter</ProjectTitle>
       <ProjectContentContainer>
@@ -99,14 +129,20 @@ const ProjectsSection: React.FC<Props> = () => {
           <StyledVideo
             src="/projects/monocopter_testflight.mp4"
             width={256}
+            height={MonocopterHeight}
             controls
           />
         </VideoContainer>
-        <DescriptionContainer>
-          Working as a research assistant at the Royal Military College in
-          Kingston Ontario, I developed the avionics for a single-bladed
-          helicopter (AKA monocopter).
-        </DescriptionContainer>
+        <DescriptionAndTagsContainer style={{ height: MonocopterHeight }}>
+          <DescriptionContainer>
+            Working as a research assistant at the Royal Military College in
+            Kingston Ontario, I developed the avionics for a single-bladed
+            helicopter (AKA monocopter).
+          </DescriptionContainer>
+          <TagsContainer>
+            <StyledTagList tags={["Arduino", "C/C++"]} />
+          </TagsContainer>
+        </DescriptionAndTagsContainer>
       </ProjectContentContainer>
       <StyledSeeMoreButton href="/projects">See more</StyledSeeMoreButton>
     </ProjectsContainer>
