@@ -76,3 +76,50 @@ export const UnderConstructionIcon: React.FC<Props> = ({ className }) => {
     </AttributionContainer>
   );
 };
+
+export const ResumeIcon: React.FC<Props> = ({ className }) => {
+  return (
+    <AttributionContainer className={className}>
+      <StyledLink href="https://iconscout.com/icons/resume" target="_blank">
+        Resume Icon
+      </StyledLink>{" "}
+      by{" "}
+      <StyledLink href="https://iconscout.com/contributors/bukeicon">
+        Buke Icon
+      </StyledLink>{" "}
+      on <StyledLink href="https://iconscout.com">IconScout</StyledLink>
+    </AttributionContainer>
+  );
+};
+
+export const GithubIcon: React.FC<Props> = ({ className }) => {
+  return (
+    <AttributionContainer className={className}>
+      <StyledLink href="https://iconscout.com/icons/social" target="_blank">
+        Github Icon
+      </StyledLink>{" "}
+      by{" "}
+      <StyledLink
+        href="https://iconscout.com/contributors/pocike"
+        target="_blank"
+      >
+        Those Icons
+      </StyledLink>
+    </AttributionContainer>
+  );
+};
+
+export const LinkedInIcon: React.FC<Props> = ({ className }) => {
+  return (
+    <AttributionContainer className={className}>
+      <StyledLink href="https://iconscout.com/icons/linkedin" target="_blank">
+        Linkedin Icon
+      </StyledLink>{" "}
+      by{" "}
+      <StyledLink href="https://iconscout.com/contributors/unicons">
+        Unicons Font
+      </StyledLink>{" "}
+      on <StyledLink href="https://iconscout.com">IconScout</StyledLink>
+    </AttributionContainer>
+  );
+};

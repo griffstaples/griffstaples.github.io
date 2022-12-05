@@ -7,7 +7,13 @@ import ContactSection from "components/home/ContactSection";
 import HomeSection from "components/home/HomeSection";
 import Footer from "components/home/Footer";
 import { SectionDivider } from "components/global/SectionDivider";
-import { MenuIcon, DownArrow } from "components/global/Attributions";
+import {
+  MenuIcon,
+  DownArrow,
+  ResumeIcon,
+  GithubIcon,
+  LinkedInIcon,
+} from "components/global/Attributions";
 import AboutSectionV2 from "./about/AboutSectionV2";
 
 const PageWrapper = styled.div`
@@ -56,6 +62,9 @@ const HomePageContent: React.FC = () => {
           <>
             <MenuIcon />
             <DownArrow />
+            <ResumeIcon />
+            <GithubIcon />
+            <LinkedInIcon />
           </>
         </Footer>
       </ContentWrapper>

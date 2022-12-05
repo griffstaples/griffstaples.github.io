@@ -1,7 +1,6 @@
 import { Spaceship } from "components/global/Attributions";
 import React from "react";
 import styled from "styled-components";
-import { Attribution } from "types/Attribution";
 
 const FooterContainer = styled.div`
   margin-top: 32px;
