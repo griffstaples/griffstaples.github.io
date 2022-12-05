@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Colours } from "styles/Colours";
 import Header from "components/home/Header";
-import AboutSection from "components/home/about/AboutSection";
 import ProjectSection from "components/home/projects/ProjectSection";
 import ContactSection from "components/home/ContactSection";
 import HomeSection from "components/home/HomeSection";
 import Footer from "components/home/Footer";
 import { SectionDivider } from "components/global/SectionDivider";
 import { MenuIcon, DownArrow } from "components/global/Attributions";
+import AboutSectionV2 from "./about/AboutSectionV2";
 
 const PageWrapper = styled.div`
   background-image: linear-gradient(
@@ -47,7 +47,7 @@ const HomePageContent: React.FC = () => {
         <Header />
         <HomeSection />
         <SectionDivider {...SectionDividerConfig} />
-        <AboutSection />
+        <AboutSectionV2 />
         <SectionDivider {...SectionDividerConfig} />
         <ProjectSection />
         <SectionDivider {...SectionDividerConfig} />

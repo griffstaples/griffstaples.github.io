@@ -4,7 +4,7 @@ import { sourceCodePro } from "styles/Fonts";
 
 const StyledButton = styled.button`
   padding: 8px 32px;
-  border-radius: 32px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,6 @@ const StyledButton = styled.button`
   &:hover {
     border-color: ${Colours.TextRegular};
     box-shadow: 0px 0px 5px 5px ${Colours.NeonBlue};
-    transition: ease-in 0.15s;
     color: ${Colours.NeonBlue};
   }
 `;

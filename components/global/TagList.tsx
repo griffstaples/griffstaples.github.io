@@ -10,6 +10,7 @@ const TagsContainer = styled.ul`
   row-gap: 8px;
   padding: 0;
   flex-wrap: wrap;
+  margin: 0;
 `;
 
 const Tag = styled.li`
@@ -18,7 +19,7 @@ const Tag = styled.li`
   align-items: center;
   height: 16px;
   padding: 8px 8px;
-  box-shadow: 0px 0px 5px 5px ${Colours.BackgroundColorDark};
+  border: 1px solid ${Colours.NeonBlue};
   border-radius: 4px;
   font-family: ${sourceCodePro.style.fontFamily};
 `;

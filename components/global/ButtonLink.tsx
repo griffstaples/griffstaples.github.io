@@ -1,14 +1,12 @@
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Colours } from "styles/Colours";
 import { sourceCodePro } from "styles/Fonts";
 
-const LinkContainer = styled.div``;
-
-const StyledLink = styled(Link)`
+const LinkStyles = css`
   text-decoration: none;
   padding: 8px 32px;
-  border-radius: 32px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,22 +18,48 @@ const StyledLink = styled(Link)`
   &:hover {
     border-color: ${Colours.TextRegular};
     box-shadow: 0px 0px 5px 5px ${Colours.NeonBlue};
-    transition: ease-in 0.15s;
     color: ${Colours.NeonBlue};
   }
 `;
 
+const StyledInteralLink = styled(Link)`
+  ${LinkStyles}
+`;
+
+const StyledExternalLink = styled.a`
+  ${LinkStyles}
+`;
 interface Props {
-  href: string;
+  href?: string;
   children: React.ReactNode;
   className?: string;
+  isExternal?: boolean;
+  target?: string;
 }
 
-const ButtonLink: React.FC<Props> = ({ href, children, className }) => {
-  return (
-    <StyledLink href={href} className={className}>
+const ButtonLink: React.FC<Props> = ({
+  href,
+  children,
+  className,
+  isExternal,
+  target,
+}) => {
+  return isExternal ? (
+    <StyledExternalLink
+      href={href || ""}
+      className={className}
+      target={target || "_self"}
+    >
       {children}
-    </StyledLink>
+    </StyledExternalLink>
+  ) : (
+    <StyledInteralLink
+      href={href || ""}
+      className={className}
+      target={target || "_self"}
+    >
+      {children}
+    </StyledInteralLink>
   );
 };
 
