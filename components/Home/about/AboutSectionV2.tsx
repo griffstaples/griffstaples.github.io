@@ -1,13 +1,8 @@
 import styled from "styled-components";
-import SeeMoreButton from "components/global/Button";
 import { sourceCodePro } from "styles/Fonts";
 import { Colours } from "styles/Colours";
-import { Breakpoints } from "styles/Breakpoints";
-import { AboutImageCard } from "components/home/about/AboutImageCard";
 import { SectionTitle } from "components/home/SectionTitle";
-import Image from "next/image";
 import { TagList } from "components/global/TagList";
-import Button from "components/global/Button";
 import { ResumeIcon } from "components/global/ResumeIcon";
 import { GithubIcon } from "components/global/GithubIcon";
 import { LinkedInIcon } from "components/global/LinkedInIcon";
@@ -34,7 +29,7 @@ const AboutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 32px auto;
+  margin: 0 auto;
 `;
 
 const DescriptionAndSkillContainer = styled.div`

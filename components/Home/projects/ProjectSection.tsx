@@ -13,8 +13,8 @@ const MonocopterHeight = 455;
 
 const StyledTagList = styled(TagList)`
   li {
-    /* border: none;
-    opacity: 0.5; */
+    border: none;
+    opacity: 0.5;
   }
 `;
 
@@ -69,8 +69,6 @@ const DescriptionContainer = styled.div`
 `;
 
 const TagsContainer = styled.div``;
-
-const Description = styled.div``;
 
 const StyledSeeMoreButton = styled(ButtonLink)`
   margin-bottom: 16px;

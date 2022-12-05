@@ -11,7 +11,7 @@ const TitleContainer = styled.div`
 
 const TitleText = styled.h2`
   font-size: 24px;
-  margin: 0;
+  margin-top: 32px;
   padding: 0;
 `;
 
