@@ -20,6 +20,11 @@ export default function App({ Component, pageProps }: AppProps) {
             line-height: 1.3;
             background-color: ${Colours.BackgroundColorDark};
             overflow-x: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+          body::-webkit-scrollbar {
+            display: none;
           }
           * {
             cursor: none !important;

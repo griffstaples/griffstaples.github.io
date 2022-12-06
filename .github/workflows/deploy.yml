@@ -20,6 +20,8 @@ jobs:
           node-version: 16
           cache: npm
 
+      # export produces static site files in out folder
+      # add .nojekyll file to prevent github from ignoring _next folder
       - name: Build
         run: |
           npm ci
@@ -27,6 +29,7 @@ jobs:
           npm run export
           touch out/.nojekyll
 
+      # Build result in out folder gets copied to gh-pages branch and deployed
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
