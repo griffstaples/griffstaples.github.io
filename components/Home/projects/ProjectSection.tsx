@@ -3,8 +3,8 @@ import { TagList } from "components/global/TagList";
 import styled from "styled-components";
 import { Breakpoints } from "styles/Breakpoints";
 import { sourceCodePro } from "styles/Fonts";
-import { SectionTitle } from "../SectionTitle";
-import { ProjectTitle } from "./ProjectTitle";
+import { SectionTitle } from "components/home/SectionTitle";
+import { ProjectTitle } from "components/home/projects/ProjectTitle";
 
 const CryptoImageHeight = 231;
 const BPMonitorHeight = 175;
@@ -91,7 +91,7 @@ const ProjectsSection: React.FC<Props> = () => {
         </ImageContainer>
         <DescriptionAndTagsContainer style={{ height: CryptoImageHeight }}>
           <DescriptionContainer>
-            This project takes advantage of Binance's API to trade crypto
+            This project takes advantage of Binance&apos;s API to trade crypto
             currency following an algorithm.
           </DescriptionContainer>
           <TagsContainer>

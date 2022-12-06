@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";
 import { sourceCodePro } from "styles/Fonts";
-import MenuOptions from "components/home/MenuOptions";
 import { useScrollToId } from "hooks/useScrollToId";
+import MenuOptions from "components/home/MenuOptions";
 
 // Link now refers to where we scroll to on this page
 // Link will refer to where we redirect to later

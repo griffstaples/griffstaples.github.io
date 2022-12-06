@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";

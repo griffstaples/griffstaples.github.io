@@ -130,7 +130,8 @@ const AboutSectionV2: React.FC<Props> = () => {
         <DescriptionContainer>
           <DescriptionAndSkillsTitle>whoami</DescriptionAndSkillsTitle>
           <DescriptionText>
-            I'm a born and raised Vancouverite living and working in Toronto.
+            I&apos;m a born and raised Vancouverite living and working in
+            Toronto.
             <br />
             <br />
             I have experience developing software in various industries

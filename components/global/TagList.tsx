@@ -32,8 +32,8 @@ interface Props {
 export const TagList: React.FC<Props> = ({ tags, className }) => {
   return (
     <TagsContainer className={className}>
-      {tags.map((tag) => (
-        <Tag>{tag}</Tag>
+      {tags.map((tag, i) => (
+        <Tag key={i}>{tag}</Tag>
       ))}
     </TagsContainer>
   );

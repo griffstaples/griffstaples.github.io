@@ -1,4 +1,3 @@
-import { Source_Code_Pro } from "@next/font/google";
 import Head from "next/head";
 import HomePageContent from "components/home/HomePageContent";
 

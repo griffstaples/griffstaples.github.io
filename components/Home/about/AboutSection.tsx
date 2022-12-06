@@ -2,7 +2,6 @@ import styled from "styled-components";
 import SeeMoreButton from "components/global/Button";
 import { sourceCodePro } from "styles/Fonts";
 import { Colours } from "styles/Colours";
-import { Breakpoints } from "styles/Breakpoints";
 import { AboutImageCard } from "components/home/about/AboutImageCard";
 import { SectionTitle } from "components/home/SectionTitle";
 
@@ -55,16 +54,6 @@ const ProfileImageCard = styled.div`
   width: 100%;
   box-shadow: 0px 0px 5px 5px ${Colours.BackgroundColorDark};
   border-radius: 4px;
-`;
-
-const TagListContainer = styled.div`
-  width: 100%;
-  display: none;
-
-  @media (min-width: ${Breakpoints.small}) {
-    max-width: 420px;
-    display: block;
-  }
 `;
 
 interface Props {}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { sourceCodePro } from "styles/Fonts";
-import { SectionTitle } from "./SectionTitle";
+import { SectionTitle } from "components/home/SectionTitle";
 import Button from "components/global/Button";
 import { Breakpoints } from "styles/Breakpoints";
 

@@ -3,7 +3,7 @@ import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";
 import { ConstructionIcon } from "components/global/ConstructionIcon";
 import Link from "next/link";
-import { UnderConstructionIcon } from "./Attributions";
+import { UnderConstructionIcon } from "components/global/Attributions";
 import Footer from "components/home/Footer";
 
 const Container = styled.div`

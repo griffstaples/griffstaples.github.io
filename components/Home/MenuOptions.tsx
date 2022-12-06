@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { Colours } from "styles/Colours";
 import { sourceCodePro } from "styles/Fonts";
+import { MenuOption } from "types/MenuTypes";
 
 const MenuOptionContainer = styled.div`
   position: relative;
