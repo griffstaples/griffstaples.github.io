@@ -141,7 +141,7 @@ const ProjectsSection: React.FC<Props> = () => {
           </TagsContainer>
         </DescriptionAndTagsContainer>
       </ProjectContentContainer>
-      <StyledSeeMoreButton href="/projects">See more</StyledSeeMoreButton>
+      <StyledSeeMoreButton href="/projects">See projects</StyledSeeMoreButton>
     </ProjectsContainer>
   );
 };

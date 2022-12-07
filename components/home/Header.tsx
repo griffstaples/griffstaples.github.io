@@ -20,7 +20,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const MainTextContainer = styled.div``;
-const MainText = styled.a``;
+const MainText = styled.div``;
 
 const MenuOptionsContainer = styled.div`
   display: block;
