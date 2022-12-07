@@ -40,12 +40,21 @@ export const useCustomCursor = () => {
   const [opacity, setOpacity] = useState(1);
 
   const mouseYRef = useRef({ mouseX, mouseY });
+  const circleRef = useRef<HTMLDivElement>();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMouseX(e.pageX);
       setMouseY(e.pageY);
+
+      // style needs to be set here otherwise it's very laggy on firefox
+      if (circleRef?.current) {
+        circleRef.current.style.transform = `translate(${
+          e.pageX - CIRCLESIZE / 2 - 1
+        }px, ${e.pageY - CIRCLESIZE / 2 - 1}px)`;
+      }
       mouseYRef.current = { mouseX: e.clientX, mouseY: e.clientY };
+
       let ele = window.document.querySelector(
         "a:hover, input:hover, button:hover, .hoverMouse:hover"
       );
@@ -68,15 +77,14 @@ export const useCustomCursor = () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [circleRef]);
 
   return (
     <CursorContainer hasMouseMoved={!(mouseY === 0 && mouseX === 0)}>
       <CustomCursorCircle
+        //@ts-ignore
+        ref={circleRef}
         style={{
-          transform: `translate(${mouseX - CIRCLESIZE / 2 - 0 / 2 - 1}px, ${
-            mouseY - CIRCLESIZE / 2 - 0 / 2 - 1
-          }px)`,
           transition: "transform 0.1s linear",
           pointerEvents: "none",
         }}
