@@ -78,18 +78,17 @@ const MenuOptions: React.FC<Props> = ({ options, position }) => {
         <MenuIcon size={24} stroke={Colours.NeonBlue} />
       </IconContainer>
       <DropDownContainer isOpen={isOpen}>
-        {options.map((option) => {
+        {options.map((option, i) => {
           return (
-            <>
-              <DropDownOption
-                onClick={() => {
-                  scrollToId(option.link);
-                  closeDropDown();
-                }}
-              >
-                {option.name}
-              </DropDownOption>
-            </>
+            <DropDownOption
+              key={`option-${i}`}
+              onClick={() => {
+                scrollToId(option.link);
+                closeDropDown();
+              }}
+            >
+              {option.name}
+            </DropDownOption>
           );
         })}
       </DropDownContainer>

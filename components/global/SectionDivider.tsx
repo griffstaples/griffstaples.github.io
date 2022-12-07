@@ -52,6 +52,7 @@ export const SectionDivider: React.FC<Props> = ({
         strokeWidth={vLine.width}
         shapeRendering="crispEdges"
         preserveAspectRatio="none"
+        key={`v-${i}`}
       />
     );
   }
@@ -68,6 +69,7 @@ export const SectionDivider: React.FC<Props> = ({
         strokeLinejoin="round"
         strokeWidth={hLine.width}
         shapeRendering="crispEdges"
+        key={`h-${i}`}
         // preserveAspectRatio="none"
       />
     );
