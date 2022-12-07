@@ -49,6 +49,7 @@ interface FormInputProps {
   required?: boolean;
   inputType?: string;
   className?: string;
+  name: string;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -58,6 +59,7 @@ const FormInput: React.FC<FormInputProps> = ({
   required,
   inputType,
   className,
+  name,
 }) => {
   return (
     <FormInputContainer className={className}>
@@ -66,6 +68,7 @@ const FormInput: React.FC<FormInputProps> = ({
         type={inputType}
         placeholder={placeholder}
         required={required}
+        name={name}
       ></FormTextInput>
     </FormInputContainer>
   );
@@ -94,6 +97,7 @@ interface FormTextAreaProps {
   placeholder?: string;
   required?: boolean;
   className?: string;
+  name: string;
 }
 
 const FormTextArea: React.FC<FormTextAreaProps> = ({
@@ -102,14 +106,15 @@ const FormTextArea: React.FC<FormTextAreaProps> = ({
   placeholder,
   required,
   className,
+  name,
 }) => {
   return (
     <FormTextAreaContainer className={className}>
       {showLabel && <FormTextAreaLabel>{label}</FormTextAreaLabel>}
       <CustomFormTextArea
-        name={label}
         placeholder={placeholder}
         required={required}
+        name={name}
       ></CustomFormTextArea>
     </FormTextAreaContainer>
   );
@@ -134,6 +139,7 @@ const ContactSection: React.FC<Props> = () => {
               placeholder={"Full Name"}
               required
               inputType="text"
+              name="fullname"
             />
           </InputContainer>
           <InputContainer>
@@ -143,6 +149,7 @@ const ContactSection: React.FC<Props> = () => {
               placeholder={"Email Address"}
               required
               inputType="email"
+              name="email"
             />
           </InputContainer>
           <InputContainer>
@@ -151,6 +158,7 @@ const ContactSection: React.FC<Props> = () => {
               showLabel
               placeholder="Enter message here..."
               required
+              name="message"
             ></FormTextArea>
           </InputContainer>
           <SubmitButton type="submit">Send message</SubmitButton>
