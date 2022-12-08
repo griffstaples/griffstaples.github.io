@@ -56,8 +56,9 @@ export const useCustomCursor = () => {
       mouseYRef.current = { mouseX: e.clientX, mouseY: e.clientY };
 
       let ele = window.document.querySelector(
-        "a:hover, input:hover, button:hover, .hoverMouse:hover"
+        "a:hover, input:hover, button:hover, textarea:hover, .hoverMouse:hover"
       );
+
       if (ele !== null) {
         setDotSize(LARGEDOTSIZE);
         setOpacity(0.7);
