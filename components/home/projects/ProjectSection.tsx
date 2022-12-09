@@ -85,7 +85,7 @@ const ProjectsSection: React.FC<Props> = () => {
           <img
             width={256}
             height={CryptoImageHeight}
-            alt="Crypto Currency Trader Schematic"
+            alt="A schematic of cryptocurrency trading software"
             src="/projects/CryptoTraderSchematic_smaller.png"
           />
         </ImageContainer>
@@ -105,7 +105,7 @@ const ProjectsSection: React.FC<Props> = () => {
           <img
             width={256}
             height={175}
-            alt="Blood Pressure Monitor Schematic"
+            alt="A schematic of an optical blood pressure monitor"
             src="/projects/bpschematic_smaller.png"
           />
         </ImageContainer>

@@ -56,7 +56,7 @@ export const AboutImageCard: React.FC = () => {
             src="/headshot_128_square.png"
             width={128}
             height={128}
-            alt={"Headshot"}
+            alt={"Griffin Staples portrait"}
           />
         </CircularImageContainer>
       </ImageSectionContainer>

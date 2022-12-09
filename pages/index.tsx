@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Griffin Staples</title>
+        <title>Griffin Staples, Software Developer</title>
         <meta
           name="description"
-          content="Griffin Staples, Software Developer"
+          content="An introduction to me and my software experience, including past and present work and projects."
         />
         <link rel="icon" href="/galaxy.svg" />
       </Head>
