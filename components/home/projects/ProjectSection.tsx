@@ -127,6 +127,7 @@ const ProjectsSection: React.FC<Props> = () => {
             src="/projects/monocopter_testflight.mp4"
             width={256}
             height={MonocopterHeight}
+            poster="/projects/monocopter_thumbnail.png"
             controls
           />
         </VideoContainer>
