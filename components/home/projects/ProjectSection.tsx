@@ -6,8 +6,8 @@ import { sourceCodePro } from "styles/Fonts";
 import { SectionTitle } from "components/home/SectionTitle";
 import { ProjectTitle } from "components/home/projects/ProjectTitle";
 
-const CryptoImageHeight = 231;
-const BPMonitorHeight = 175;
+const CryptoImageHeight = 207;
+const BPMonitorHeight = 202;
 const MonocopterHeight = 455;
 
 const StyledTagList = styled(TagList)`
@@ -86,7 +86,7 @@ const ProjectsSection: React.FC<Props> = () => {
             width={256}
             height={CryptoImageHeight}
             alt="A schematic of cryptocurrency trading software"
-            src="/projects/CryptoTraderSchematic_smaller.png"
+            src="/projects/CryptoDiagram.png"
           />
         </ImageContainer>
         <DescriptionAndTagsContainer style={{ height: CryptoImageHeight }}>
@@ -104,9 +104,9 @@ const ProjectsSection: React.FC<Props> = () => {
         <ImageContainer>
           <img
             width={256}
-            height={175}
+            height={BPMonitorHeight}
             alt="A schematic of an optical blood pressure monitor"
-            src="/projects/bpschematic_smaller.png"
+            src="/projects/BP_schematic.png"
           />
         </ImageContainer>
         <DescriptionAndTagsContainer style={{ height: BPMonitorHeight }}>
