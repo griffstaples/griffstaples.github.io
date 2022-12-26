@@ -4,7 +4,7 @@ export const useServerSafeDocument = () => {
   const [safeDocument, setSafeDocument] = useState<Document | null>(null);
 
   useEffect(() => {
-    setSafeDocument(safeDocument);
+    setSafeDocument(document);
   }, []);
 
   return safeDocument;
