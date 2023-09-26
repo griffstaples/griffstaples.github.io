@@ -10,7 +10,7 @@ export default function Home() {
           name="description"
           content="An introduction to me and my software experience, including past and present work and projects."
         />
-        <link rel="icon" href="/galaxy.svg" />
+        <link rel="icon" href="/website_favicon.svg" />
       </Head>
       <main>
         <HomePageContent />
