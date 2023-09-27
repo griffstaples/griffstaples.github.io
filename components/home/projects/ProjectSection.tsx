@@ -1,21 +1,11 @@
 import ButtonLink from "components/global/ButtonLink";
-import { TagList } from "components/global/TagList";
 import styled from "styled-components";
-import { Breakpoints } from "styles/Breakpoints";
-import { sourceCodePro } from "styles/Fonts";
 import { SectionTitle } from "components/home/SectionTitle";
-import { ProjectTitle } from "components/home/projects/ProjectTitle";
+import StandardProjectTile from "./StandardProjectTile";
 
 const CryptoImageHeight = 207;
 const BPMonitorHeight = 202;
 const MonocopterHeight = 455;
-
-const StyledTagList = styled(TagList)`
-  li {
-    border: none;
-    opacity: 0.5;
-  }
-`;
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -25,49 +15,13 @@ const ProjectsContainer = styled.div`
   padding: 0 16px;
 `;
 
-const ProjectContentContainer = styled.div<{ textPosition?: "left" | "right" }>`
-  padding: 0 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 32px;
-  margin-top: 32px;
-  margin-bottom: 64px;
-  @media (min-width: ${Breakpoints.small}) {
-    flex-direction: ${(props) =>
-      props.textPosition === "right" ? "row-reverse" : "row"};
-    /* flex-direction: row; */
-    column-gap: 32px;
-    justify-content: start;
-    align-items: center;
-  }
-`;
-
 const ImageContainer = styled.div``;
 
-const VideoContainer = styled.div`
-  /* width: 100%;
-  margin: 0 auto; */
-`;
+const VideoContainer = styled.div``;
 
 const StyledVideo = styled.video`
   border-radius: 8px;
 `;
-
-const DescriptionAndTagsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  height: 100%;
-`;
-
-const DescriptionContainer = styled.div`
-  font-family: ${sourceCodePro.style.fontFamily};
-`;
-
-const TagsContainer = styled.div``;
 
 const StyledSeeMoreButton = styled(ButtonLink)`
   margin-bottom: 16px;
@@ -79,28 +33,58 @@ const ProjectsSection: React.FC<Props> = () => {
   return (
     <ProjectsContainer>
       <SectionTitle id="project-title">Projects</SectionTitle>
-      <ProjectTitle textPosition="left">Crypto-Currency Trader</ProjectTitle>
-      <ProjectContentContainer>
+      <StandardProjectTile
+        projectTitle="Comment Explorer"
+        projectTitlePosition="right"
+        projectDescription="Comment Explorer is a web app for analyzing the Youtube comment section. It provides sentiment, emotional content and subject analysis and its ChatGPT integration allows you to query your comment section."
+        descriptionTextPosition="right"
+        tagList={["NextJS", "Typescript", "Python", "FastAPI", "ChatGPT"]}
+        contentHeight={240}
+        callToActionLink="https://www.commentexplorer.com"
+        callToActionText="Check it out!"
+      >
+        <ImageContainer>
+          <img
+            style={{ borderRadius: 8 }}
+            width={300}
+            height={238}
+            alt="A image of the Comment Explorer analysis"
+            src="/projects/CommentExplorerDashboard.png"
+          />
+        </ImageContainer>
+      </StandardProjectTile>
+      <StandardProjectTile
+        projectTitle="Crypto-Currency Trader"
+        projectTitlePosition="left"
+        projectDescription="This project takes advantage of Binance's API to trade crypto
+        currency following an algorithm."
+        descriptionTextPosition="left"
+        tagList={["Python", "keras", "BinanceAPI"]}
+        contentHeight={230}
+        callToActionLink="https://github.com/griffstaples/CryptocurrencyTrader"
+        callToActionText="Check out the repo."
+      >
         <ImageContainer>
           <img
             width={256}
             height={CryptoImageHeight}
-            alt="A schematic of cryptocurrency trading software"
+            alt="A schematic of the cryptocurrency trading software"
             src="/projects/CryptoDiagram.png"
           />
         </ImageContainer>
-        <DescriptionAndTagsContainer style={{ height: CryptoImageHeight }}>
-          <DescriptionContainer>
-            This project takes advantage of Binance&apos;s API to trade crypto
-            currency following an algorithm.
-          </DescriptionContainer>
-          <TagsContainer>
-            <StyledTagList tags={["Python", "keras", "BinanceAPI"]} />
-          </TagsContainer>
-        </DescriptionAndTagsContainer>
-      </ProjectContentContainer>
-      <ProjectTitle textPosition="right">Bloor Pressure Monitor</ProjectTitle>
-      <ProjectContentContainer textPosition="right">
+      </StandardProjectTile>
+      <StandardProjectTile
+        projectTitle="Blood Pressure Monitor"
+        projectTitlePosition="right"
+        projectDescription="For my 4th year undegraduate thesis I designed a blood pressure
+        monitor which measured blood pressure using an optical signal as
+        opposed to the traditional auscultatory method."
+        descriptionTextPosition="right"
+        tagList={["Python", "keras", "numpy"]}
+        contentHeight={BPMonitorHeight}
+        callToActionLink="https://github.com/griffstaples/EngPhysThesis"
+        callToActionText="Check out the repo."
+      >
         <ImageContainer>
           <img
             width={256}
@@ -109,19 +93,17 @@ const ProjectsSection: React.FC<Props> = () => {
             src="/projects/BP_Schematic.png"
           />
         </ImageContainer>
-        <DescriptionAndTagsContainer style={{ height: BPMonitorHeight }}>
-          <DescriptionContainer>
-            For my 4th year undegraduate thesis I designed a blood pressure
-            monitor which measured blood pressure using an optical signal as
-            opposed to the traditional auscultatory method.
-          </DescriptionContainer>
-          <TagsContainer>
-            <StyledTagList tags={["Python", "keras", "numpy"]} />
-          </TagsContainer>
-        </DescriptionAndTagsContainer>
-      </ProjectContentContainer>
-      <ProjectTitle textPosition="left">Monocopter</ProjectTitle>
-      <ProjectContentContainer>
+      </StandardProjectTile>
+      <StandardProjectTile
+        projectTitle="Monocopter"
+        projectTitlePosition="left"
+        projectDescription="Working as a research assistant at the Royal Military College in
+        Kingston Ontario, I developed the avionics for a single-bladed
+        helicopter (AKA monocopter)."
+        descriptionTextPosition="left"
+        tagList={["Arduino", "C/C++"]}
+        contentHeight={MonocopterHeight}
+      >
         <VideoContainer>
           <StyledVideo
             src="/projects/monocopter_testflight.mp4"
@@ -131,17 +113,7 @@ const ProjectsSection: React.FC<Props> = () => {
             controls
           />
         </VideoContainer>
-        <DescriptionAndTagsContainer style={{ height: MonocopterHeight }}>
-          <DescriptionContainer>
-            Working as a research assistant at the Royal Military College in
-            Kingston Ontario, I developed the avionics for a single-bladed
-            helicopter (AKA monocopter).
-          </DescriptionContainer>
-          <TagsContainer>
-            <StyledTagList tags={["Arduino", "C/C++"]} />
-          </TagsContainer>
-        </DescriptionAndTagsContainer>
-      </ProjectContentContainer>
+      </StandardProjectTile>
       <StyledSeeMoreButton href="/projects">See projects</StyledSeeMoreButton>
     </ProjectsContainer>
   );

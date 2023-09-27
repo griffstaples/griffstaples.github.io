@@ -13,6 +13,7 @@ const ProjectTitleContainer = styled.div<ContainerProps>`
   padding: 16px;
   align-items: center;
   justify-content: start;
+  box-sizing: border-box;
 `;
 
 const LongLine = styled.div`
