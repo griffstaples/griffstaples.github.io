@@ -106,7 +106,7 @@ const ProjectsSection: React.FC<Props> = () => {
             width={256}
             height={BPMonitorHeight}
             alt="A schematic of an optical blood pressure monitor"
-            src="/projects/BP_schematic.png"
+            src="/projects/BP_Schematic.png"
           />
         </ImageContainer>
         <DescriptionAndTagsContainer style={{ height: BPMonitorHeight }}>
