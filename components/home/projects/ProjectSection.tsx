@@ -34,6 +34,26 @@ const ProjectsSection: React.FC<Props> = () => {
     <ProjectsContainer>
       <SectionTitle id="project-title">Projects</SectionTitle>
       <StandardProjectTile
+        projectTitle="Embedding Dictionary"
+        projectTitlePosition="left"
+        projectDescription="Embedding Dictionary is a tool that allows you to explore the English language in embedding space, providing a fuzzy nearest neighbours search to determine related words."
+        descriptionTextPosition="left"
+        tagList={["NextJS", "Typescript", "Python", "FastAPI"]}
+        contentHeight={240}
+        callToActionLink="https://www.embeddingdictionary.com"
+        callToActionText="Try it here."
+      >
+        <ImageContainer>
+          <img
+            style={{ borderRadius: 8 }}
+            width={300}
+            height={238}
+            alt="An image showing an the nearest neighbours in an embedding space map"
+            src="/projects/EmbeddingDictionaryGraph.jpg"
+          />
+        </ImageContainer>
+      </StandardProjectTile>
+      <StandardProjectTile
         projectTitle="Comment Explorer"
         projectTitlePosition="right"
         projectDescription="Comment Explorer is a web app for analyzing the Youtube comment section. It provides sentiment, emotional content and subject analysis and its ChatGPT integration allows you to query your comment section."
@@ -48,7 +68,7 @@ const ProjectsSection: React.FC<Props> = () => {
             style={{ borderRadius: 8 }}
             width={300}
             height={238}
-            alt="A image of the Comment Explorer analysis"
+            alt="An image of the Comment Explorer analysis"
             src="/projects/CommentExplorerDashboard.png"
           />
         </ImageContainer>
