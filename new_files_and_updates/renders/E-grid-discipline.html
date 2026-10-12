@@ -1,0 +1,162 @@
+<title>Griffin Staples — Grid Discipline direction</title>
+<style>
+  :root{
+    --bg-0:#1c1c1c;
+    --bg-1:#282828;
+    --line:#3a3a3a;
+    --text-hi:#ffffff;
+    --text-mid:#b4b4b2;
+    --text-dim:#7a7a78;
+    --cyan:#00efff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:linear-gradient(to bottom,var(--bg-0),var(--bg-1));
+    color:var(--text-hi);
+    font-family:-apple-system,"Segoe UI",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .frame{max-width:920px;margin:0 auto;padding:0 28px;}
+  .note{
+    background:#141414;border-bottom:1px solid var(--line);
+    color:var(--text-dim);font:12px/1.6 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.04em;padding:10px 28px;text-align:center;
+  }
+  .note b{color:var(--cyan);font-weight:600;}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0 0;}
+  .wordmark{font:13px/1 ui-monospace,"SF Mono",monospace;letter-spacing:.08em;color:var(--text-hi);}
+  .navlinks{display:flex;gap:24px;font:12px ui-monospace,"SF Mono",monospace;letter-spacing:.04em;color:var(--text-mid);}
+  .navlinks a{color:inherit;text-decoration:none;}
+  .navlinks a:hover{color:var(--cyan);}
+
+  /* HERO: spec grid */
+  .hero{
+    display:grid;grid-template-columns:220px 1fr;gap:48px;
+    padding:60px 0 44px;
+    border-bottom:1px solid var(--line);
+  }
+  @media (max-width:680px){ .hero{grid-template-columns:1fr;gap:28px;} }
+
+  dl.spec{margin:0;}
+  .spec-row{
+    display:grid;grid-template-columns:72px 1fr;gap:10px;
+    padding:9px 0;border-top:1px solid var(--line);
+    font:12.5px/1.5 ui-monospace,"SF Mono",monospace;
+  }
+  .spec-row:last-child{border-bottom:1px solid var(--line);}
+  .spec-row dt{color:var(--text-dim);letter-spacing:.04em;text-transform:uppercase;}
+  .spec-row dd{margin:0;color:var(--text-mid);}
+
+  h1{
+    font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.01em;
+    margin:0 0 18px;text-wrap:balance;
+  }
+  h1 .hl{color:var(--cyan);}
+  .sub{font-size:15.5px;line-height:1.65;color:var(--text-mid);max-width:58ch;margin:0;}
+
+  /* PROOF TABLE */
+  .proof-table{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid var(--line);
+    margin-bottom:54px;
+  }
+  @media (max-width:680px){ .proof-table{grid-template-columns:1fr 1fr;} }
+  .proof-cell{
+    padding:22px 24px 22px 0;
+    border-top:1px solid var(--line);
+  }
+  .proof-cell .v{font:700 22px/1 -apple-system,sans-serif;color:var(--text-hi);font-variant-numeric:tabular-nums;}
+  .proof-cell .l{font:11.5px ui-monospace,"SF Mono",monospace;color:var(--text-dim);margin-top:6px;letter-spacing:.02em;}
+
+  /* WORK TABLE */
+  .section-label{
+    font:11px ui-monospace,"SF Mono",monospace;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--text-dim);margin-bottom:18px;
+  }
+  table.work{width:100%;border-collapse:collapse;margin-bottom:60px;}
+  table.work th{
+    text-align:left;font:11px ui-monospace,"SF Mono",monospace;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--text-dim);padding:0 16px 12px 0;border-bottom:1px solid var(--line);
+  }
+  table.work td{
+    padding:16px 16px 16px 0;border-bottom:1px solid var(--line);
+    font-size:14px;color:var(--text-mid);vertical-align:top;
+  }
+  table.work td.name{color:var(--text-hi);font-weight:600;}
+  table.work td.tag{font:12px ui-monospace,"SF Mono",monospace;color:var(--cyan);white-space:nowrap;}
+  table.work td.link{text-align:right;white-space:nowrap;}
+  table.work a{color:var(--text-dim);text-decoration:none;font:12px ui-monospace,monospace;}
+  table.work a:hover{color:var(--cyan);}
+</style>
+
+<div class="note">RENDER E — "Grid Discipline" · round two · spec-sheet structure, hairlines not cards, data stated plainly</div>
+
+<div class="frame">
+  <nav>
+    <div class="wordmark">GRIFFIN STAPLES</div>
+    <div class="navlinks"><a href="#">about</a><a href="#">work</a><a href="#">contact</a></div>
+  </nav>
+
+  <section class="hero">
+    <dl class="spec">
+      <div class="spec-row"><dt>Role</dt><dd>Robotics engineer</dd></div>
+      <div class="spec-row"><dt>Focus</dt><dd>Marine &amp; field systems, edge ML</dd></div>
+      <div class="spec-row"><dt>Based</dt><dd>Vancouver, BC</dd></div>
+      <div class="spec-row"><dt>Lab</dt><dd>UBC Marine Robotics</dd></div>
+      <div class="spec-row"><dt>Cert.</dt><dd>ROC(M), PCOC, WFA</dd></div>
+      <div class="spec-row"><dt>Prior</dt><dd>5 yrs software, incl. MDA / ISS</dd></div>
+    </dl>
+    <div>
+      <h1>Robots that have to work <span class="hl">outside the lab, on the first try.</span></h1>
+      <p class="sub">I'm an MASc candidate in Electrical and Computer Engineering at UBC, building and field-deploying underwater and surface vehicles. Before robotics: five years as a production software engineer.</p>
+    </div>
+  </section>
+
+  <div class="proof-table">
+    <div class="proof-cell"><div class="v">2</div><div class="l">VEHICLES FIELDED SINCE 2025</div></div>
+    <div class="proof-cell"><div class="v">91.3%</div><div class="l">GRADUATE AVERAGE, UBC ECE</div></div>
+    <div class="proof-cell"><div class="v">$83,500</div><div class="l">FELLOWSHIPS &amp; RESEARCH AWARDS</div></div>
+    <div class="proof-cell"><div class="v">5 yrs</div><div class="l">PRODUCTION SOFTWARE, INCL. ISS</div></div>
+  </div>
+
+  <div class="section-label">Work</div>
+  <table class="work">
+    <thead>
+      <tr><th>Project</th><th>Result</th><th>Stack</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">Underwater ROV</td>
+        <td>Fielded with the Sc&apos;ianew First Nation for sea urchin population monitoring</td>
+        <td class="tag">ROS · CAD · embedded</td>
+        <td class="link"><a href="#">view →</a></td>
+      </tr>
+      <tr>
+        <td class="name">Bio-inspired surface vehicle</td>
+        <td>Built and tested a propulsion mechanism inspired by nature; AUV variant in simulation</td>
+        <td class="tag">sim · RL · CAD</td>
+        <td class="link"><a href="#">view →</a></td>
+      </tr>
+      <tr>
+        <td class="name">Vessel classification, edge ML</td>
+        <td>Acoustic models for edge-deployed vessel detection and classification</td>
+        <td class="tag">ML · edge</td>
+        <td class="link"><a href="#">view →</a></td>
+      </tr>
+      <tr>
+        <td class="name">Monocopter avionics</td>
+        <td>Flight avionics for a 375g single-bladed helicopter, successful test flight</td>
+        <td class="tag">Arduino · C/C++</td>
+        <td class="link"><a href="#">view →</a></td>
+      </tr>
+      <tr>
+        <td class="name">ISS centrifuge control software</td>
+        <td>High-reliability control software and operator GUI, at MDA</td>
+        <td class="tag">C++ · GUI</td>
+        <td class="link"><a href="#">view →</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

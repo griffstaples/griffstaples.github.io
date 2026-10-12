@@ -1,0 +1,128 @@
+<title>Griffin Staples — Plainspoken direction</title>
+<style>
+  :root{
+    --bg-0:#1c1c1c;
+    --bg-1:#282828;
+    --line:#3a3a3a;
+    --text-hi:#ffffff;
+    --text-mid:#b4b4b2;
+    --text-dim:#7a7a78;
+    --cyan:#00efff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:linear-gradient(to bottom,var(--bg-0),var(--bg-1));
+    color:var(--text-hi);
+    font-family:-apple-system,"Segoe UI",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .frame{max-width:760px;margin:0 auto;padding:0 28px;}
+  .note{
+    background:#141414;border-bottom:1px solid var(--line);
+    color:var(--text-dim);font:12px/1.6 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.04em;padding:10px 28px;text-align:center;
+  }
+  .note b{color:var(--cyan);font-weight:600;}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0 0;}
+  .wordmark{font:13px/1 ui-monospace,"SF Mono",monospace;letter-spacing:.08em;color:var(--text-hi);}
+  .navlinks{display:flex;gap:24px;font:12px ui-monospace,"SF Mono",monospace;letter-spacing:.04em;color:var(--text-mid);}
+  .navlinks a{color:inherit;text-decoration:none;}
+  .navlinks a:hover{color:var(--cyan);}
+
+  .hero{padding:74px 0 28px;}
+  h1{
+    font-size:44px;line-height:1.18;font-weight:700;letter-spacing:-.01em;
+    margin:0 0 22px;text-wrap:balance;
+  }
+  h1 .hl{color:var(--cyan);}
+  .sub{font-size:17px;line-height:1.65;color:var(--text-mid);max-width:56ch;margin:0 0 34px;}
+
+  .media{
+    width:100%;border-radius:8px;overflow:hidden;
+    background:#111;margin-bottom:20px;
+    aspect-ratio:16/9;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+  }
+  .media .cap{font:12.5px/1.6 ui-monospace,"SF Mono",monospace;color:var(--text-dim);padding:24px;letter-spacing:.02em;}
+  .media-credit{font:12px ui-monospace,monospace;color:var(--text-dim);margin:0 0 50px;}
+
+  .proof-line{
+    font-size:16px;line-height:1.75;color:var(--text-mid);
+    padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-bottom:56px;
+  }
+  .proof-line b{color:var(--text-hi);font-weight:700;}
+
+  .section-label{
+    font:11px ui-monospace,"SF Mono",monospace;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--text-dim);margin-bottom:22px;
+  }
+
+  .worklist{list-style:none;margin:0 0 70px;padding:0;}
+  .worklist li{
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+    display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  }
+  .worklist li:first-child{border-top:1px solid var(--line);}
+  .wl-left{display:flex;flex-direction:column;gap:4px;}
+  .wl-title{font-size:18px;font-weight:600;color:var(--text-hi);}
+  .wl-desc{font-size:13.5px;color:var(--text-mid);max-width:50ch;}
+  .wl-meta{font:12px ui-monospace,"SF Mono",monospace;color:var(--text-dim);white-space:nowrap;text-align:right;}
+</style>
+
+<div class="note">RENDER D — "Plainspoken" · round two · proof stated in prose, one real visual, no decorative chrome</div>
+
+<div class="frame">
+  <nav>
+    <div class="wordmark">GRIFFIN STAPLES</div>
+    <div class="navlinks"><a href="#">about</a><a href="#">work</a><a href="#">contact</a></div>
+  </nav>
+
+  <section class="hero">
+    <h1>I design and field-deploy robots. <span class="hl">Then I make sure they still work when it's cold and wet.</span></h1>
+    <p class="sub">Marine &amp; field robotics engineer at UBC, with five years of production software behind me — including flight control software for the ISS.</p>
+
+    <div class="media">
+      <div class="cap">[ Existing asset: monocopter_testflight.mp4, muted + looped, no overlay ]</div>
+    </div>
+    <p class="media-credit">Monocopter test flight — Royal Military College, 2020</p>
+
+    <p class="proof-line">Since 2025 I've built and field-deployed <b>two vehicles</b> through UBC's Marine Robotics Lab, including an underwater ROV fielded with the Sc&apos;ianew First Nation. My graduate average is <b>91.3%</b>, backed by <b>$83,500+</b> in fellowships and research awards.</p>
+  </section>
+
+  <div class="section-label">Selected work</div>
+  <ul class="worklist">
+    <li>
+      <div class="wl-left">
+        <div class="wl-title">Underwater ROV — sea urchin survey</div>
+        <div class="wl-desc">Built and field-deployed with the Sc&apos;ianew First Nation for population monitoring.</div>
+      </div>
+      <div class="wl-meta">2025 →</div>
+    </li>
+    <li>
+      <div class="wl-left">
+        <div class="wl-title">Bio-inspired surface vehicle</div>
+        <div class="wl-desc">Designed, built and tested a vehicle driven by a bio-inspired propulsion mechanism.</div>
+      </div>
+      <div class="wl-meta">2025–26 →</div>
+    </li>
+    <li>
+      <div class="wl-left">
+        <div class="wl-title">Edge-deployed vessel classification</div>
+        <div class="wl-desc">Acoustic models for vessel detection and classification, running at the edge.</div>
+      </div>
+      <div class="wl-meta">In progress →</div>
+    </li>
+    <li>
+      <div class="wl-left">
+        <div class="wl-title">ISS centrifuge control software</div>
+        <div class="wl-desc">High-reliability control software and operator GUI for a centrifuge on the ISS, at MDA.</div>
+      </div>
+      <div class="wl-meta">2021 →</div>
+    </li>
+  </ul>
+</div>

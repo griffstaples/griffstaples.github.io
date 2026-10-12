@@ -111,11 +111,64 @@ image/video module. Lowest risk, fastest to build, least dependent on having
 new media ready — good option if you want to ship an improvement *now* and
 layer in real field media later.
 
-My recommendation: build the structure and copy for **A**, but ship it with
-**C's** generative background initially, and swap in real video for the
-Mission Control treatment the moment you have ROV/vehicle footage. That way
-the site doesn't have to wait on content production, but the IA is already
-right.
+~~My original recommendation here was to build A's structure, ship with C's
+generative background, and swap in real video later.~~ Superseded by the
+critique in §4a below — see §4b for three quieter alternatives instead.
+
+## 4a. Critique of A/B/C — too much chrome
+
+Griffin's reaction to the first three renders: they might be too complex and
+risk distracting from the work itself. That's a fair read, and on reflection
+I agree more than I'd like:
+
+- **Render A is the worst offender.** The telemetry readouts (`DEPTH 4.2m`,
+  `HEADING 184°`) are fabricated — numbers that look precise but mean
+  nothing. For a "this guy gets things done" positioning, fake precision is a
+  liability the moment anyone looks twice: it reads as showmanship standing
+  in for substance. The scanline texture, corner brackets, and pulsing REC
+  dot are sci-fi HUD costume with no informational payload.
+- **Render B** is softer but still leans on journalism trappings — dateline,
+  byline, a "FIG. 01" tag — that set a *mood* rather than convey information.
+- **Render C**, even as the deliberately restrained option, still carries a
+  terminal-window title bar and a blinking cursor that aren't load-bearing.
+
+Where I'd push back, gently: the underlying idea — lead with a real visual
+and real proof instead of "name, then scroll" — is still right. A bare page
+also undersells genuine accomplishments. The fix isn't removing proof, it's
+stripping the *genre costume* around it (fake HUD chrome, filmstrip framing,
+terminal skeuomorphism) and letting real numbers and real work carry the
+page with less visual noise between the viewer and the content.
+
+## 4b. Round two — quieter directions (D, E, F)
+
+Same resume content, same dark + monospace brand base, but no fabricated
+data, no decorative chrome, and minimal-to-no animation:
+
+**D. "Plainspoken"** — one large, confident headline; a single real visual
+(the monocopter clip, shown plainly, no frame/overlay); proof stated as a
+sentence ("two vehicles fielded since 2025... 91.3%... $83,500+") rather than
+boxed stat widgets; work listed as a plain hairline-divided list, not cards.
+
+**E. "Grid Discipline"** — treats the hero like a spec sheet: a label/value
+block (role, focus, based, cert.) beside the headline, a plain four-column
+proof row separated only by hairlines, and the project list as an actual
+table (project / result / stack / link). No cards, no borders used as
+decoration — structure only where it organizes real data.
+
+**F. "Quiet Evolution"** — the lowest-risk option. Keeps the current site's
+existing hero pattern almost exactly (name, role line, scroll cue) and only
+changes the copy and adds one real asset (the monocopter video) in place of
+empty space. Tests the hypothesis that better words plus one real visual
+might fix the "hook" problem without a new visual system at all.
+
+My recommendation now: **D or F.** F is the safest, fastest-to-ship test of
+"does better copy alone fix this." D keeps F's restraint but earns a bit more
+visual weight from a confident headline and a slightly bigger hero video —
+my pick if you want one real step up from the current site without
+reintroducing chrome. E is worth a look if you want the homepage to double as
+a fast-scanning reference (useful if recruiters/hiring managers are the
+primary audience), but a full data table is a cooler, more clinical tone than
+D or F.
 
 ## 5. Visual identity notes
 
