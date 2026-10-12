@@ -1,0 +1,255 @@
+<title>Griffin Staples — Field Report direction</title>
+<style>
+  :root{
+    --bg:#1a1714;
+    --bg-raised:#211d19;
+    --line:#3a332c;
+    --text-hi:#f3ede4;
+    --text-mid:#c3b8a9;
+    --text-dim:#8a7f70;
+    --rust:#d9643a;
+    --sage:#8ba087;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text-hi);
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .frame{max-width:1120px;margin:0 auto;padding:0 32px;}
+  .note{
+    background:var(--bg-raised);
+    border-bottom:1px solid var(--line);
+    color:var(--text-dim);
+    font:12px/1.6 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.04em;
+    padding:10px 32px;
+    text-align:center;
+  }
+  .note b{color:var(--rust);font-weight:600;}
+
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:26px 0 20px;
+    border-bottom:1px solid var(--line);
+  }
+  .wordmark{font:22px/1 Georgia,serif;letter-spacing:.01em;color:var(--text-hi);}
+  .navlinks{
+    display:flex;gap:26px;
+    font:12px ui-monospace,"SF Mono",monospace;
+    letter-spacing:.08em;text-transform:uppercase;
+    color:var(--text-mid);
+  }
+  .navlinks a{color:inherit;text-decoration:none;}
+  .navlinks a:hover{color:var(--rust);}
+
+  /* MASTHEAD HERO */
+  .masthead{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:0;
+    margin-top:30px;
+    border:1px solid var(--line);
+  }
+  @media (max-width:860px){ .masthead{grid-template-columns:1fr;} }
+
+  .masthead-photo{
+    position:relative;
+    min-height:460px;
+    background:
+      linear-gradient(160deg, #2a3a35 0%, #17201d 55%, #141714 100%);
+    border-right:1px solid var(--line);
+  }
+  @media (max-width:860px){ .masthead-photo{border-right:none;border-bottom:1px solid var(--line);} }
+
+  .photo-caption{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:40px;
+    font:13px/1.7 ui-monospace,"SF Mono",monospace;
+    color:rgba(243,237,228,.45);
+    letter-spacing:.03em;
+  }
+  .photo-caption strong{display:block;color:rgba(243,237,228,.7);font-size:14px;margin-bottom:8px;}
+  .frame-tag{
+    position:absolute;bottom:16px;left:16px;
+    font:11px ui-monospace,monospace;
+    color:rgba(243,237,228,.55);
+    letter-spacing:.06em;
+    border:1px solid rgba(243,237,228,.25);
+    padding:4px 9px;
+    border-radius:2px;
+  }
+
+  .masthead-copy{
+    padding:40px 38px;
+    display:flex;flex-direction:column;justify-content:center;
+    gap:18px;
+  }
+  .dateline{
+    font:11.5px/1 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.1em;text-transform:uppercase;
+    color:var(--rust);
+  }
+  .dateline span{color:var(--text-dim);text-transform:none;letter-spacing:0;}
+  h1{
+    font-size:33px;
+    line-height:1.22;
+    font-weight:400;
+    margin:0;
+    text-wrap:balance;
+    color:var(--text-hi);
+  }
+  .dek{
+    font-size:16px;
+    line-height:1.65;
+    color:var(--text-mid);
+    margin:0;
+    font-family:Georgia,serif;
+  }
+  .byline{
+    font:12px ui-monospace,"SF Mono",monospace;
+    color:var(--text-dim);
+    letter-spacing:.04em;
+    padding-top:6px;
+    border-top:1px solid var(--line);
+  }
+  .cta-row{display:flex;gap:10px;margin-top:4px;flex-wrap:wrap;}
+  .btn{
+    font:13px ui-monospace,"SF Mono",monospace;
+    letter-spacing:.03em;
+    padding:11px 18px;
+    text-decoration:none;
+    border-radius:2px;
+  }
+  .btn-primary{background:var(--rust);color:#1a1714;font-weight:700;}
+  .btn-ghost{border:1px solid var(--line);color:var(--text-hi);}
+
+  /* STAT LINE */
+  .statline{
+    display:flex;
+    gap:0;
+    margin:34px 0 10px;
+    flex-wrap:wrap;
+  }
+  .stat{
+    padding:14px 26px 14px 0;
+    margin-right:26px;
+    border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{font:600 20px/1 Georgia,serif;color:var(--text-hi);}
+  .stat .label{font:11px ui-monospace,monospace;color:var(--text-dim);letter-spacing:.04em;margin-top:5px;}
+
+  /* FIELD NOTES FILMSTRIP */
+  .section-head{margin:54px 0 18px;}
+  .section-head .kicker{
+    font:11px ui-monospace,"SF Mono",monospace;
+    letter-spacing:.12em;text-transform:uppercase;
+    color:var(--sage);
+  }
+  .section-head h2{
+    font:28px Georgia,serif;font-weight:400;
+    margin:6px 0 0;color:var(--text-hi);
+  }
+
+  .notes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-bottom:70px;
+  }
+  @media (max-width:760px){ .notes{grid-template-columns:1fr;} }
+  .note-card{background:var(--bg);padding:0;}
+  .note-photo{
+    height:150px;
+    background:linear-gradient(150deg,#262220,#1a1714 75%);
+    position:relative;
+  }
+  .note-photo .cap{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:16px;
+    font:10.5px ui-monospace,monospace;color:rgba(243,237,228,.4);letter-spacing:.03em;
+  }
+  .note-body{padding:18px 20px 22px;}
+  .note-body .nd{
+    font:10.5px ui-monospace,monospace;color:var(--sage);
+    letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;
+  }
+  .note-body h3{margin:0 0 8px;font:19px Georgia,serif;font-weight:400;color:var(--text-hi);}
+  .note-body p{margin:0;font-size:13.5px;line-height:1.65;color:var(--text-mid);font-family:Georgia,serif;}
+</style>
+
+<div class="note">RENDER B — "Field Report" · direction only, not final copy · <b>placeholders</b> mark media that doesn't exist yet</div>
+
+<div class="frame">
+  <nav>
+    <div class="wordmark">Griffin Staples</div>
+    <div class="navlinks"><a href="#">Dispatches</a><a href="#">About</a><a href="#">Experience</a><a href="#">Contact</a></div>
+  </nav>
+
+  <section class="masthead">
+    <div class="masthead-photo">
+      <div class="photo-caption">
+        <div>
+          <strong>[ ROV deployment — field photo placeholder ]</strong>
+          Sc&apos;ianew First Nation waters, Vancouver Island, BC
+        </div>
+      </div>
+      <div class="frame-tag">FIG. 01</div>
+    </div>
+    <div class="masthead-copy">
+      <div class="dateline">Field Dispatch <span>— UBC Marine Robotics Lab, 2025–present</span></div>
+      <h1>Notes from building robots that have to actually work, in the water, this season.</h1>
+      <p class="dek">I'm Griffin Staples — a marine &amp; field robotics engineer with five years in production software behind me. This is a running account of the vehicles I've built, where they've been deployed, and what I learned getting them there.</p>
+      <div class="byline">Vancouver, BC — ROC(M) VHF · Pleasure Craft Operator · Wilderness First Aid</div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">Read the dispatches →</a>
+        <a class="btn btn-ghost" href="#">Résumé (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="statline">
+    <div class="stat"><div class="num">2 vehicles</div><div class="label">fielded since Sept 2025</div></div>
+    <div class="stat"><div class="num">91.3%</div><div class="label">graduate average, UBC ECE</div></div>
+    <div class="stat"><div class="num">$83K+</div><div class="label">in fellowships &amp; awards</div></div>
+    <div class="stat"><div class="num">5 years</div><div class="label">industry software, incl. ISS</div></div>
+  </div>
+
+  <div class="section-head">
+    <div class="kicker">Latest entries</div>
+    <h2>From the field notebook</h2>
+  </div>
+
+  <div class="notes">
+    <article class="note-card">
+      <div class="note-photo"><div class="cap">[ Surface vehicle underway — video still placeholder ]</div></div>
+      <div class="note-body">
+        <div class="nd">UBC Marine Robotics Lab</div>
+        <h3>The bio-inspired surface vehicle</h3>
+        <p>Designing a propulsion mechanism borrowed from nature, and the surface vehicle built to prove it out on open water.</p>
+      </div>
+    </article>
+    <article class="note-card">
+      <div class="note-photo"><div class="cap">[ Monocopter test flight — existing footage available ]</div></div>
+      <div class="note-body">
+        <div class="nd">Royal Military College</div>
+        <h3>A 375g single-bladed helicopter</h3>
+        <p>Flight avionics, a Bluetooth telemetry link, and the wind-tunnel script that saved two hours per run.</p>
+      </div>
+    </article>
+    <article class="note-card">
+      <div class="note-photo"><div class="cap">[ Acoustic spectrogram — graphic to be produced ]</div></div>
+      <div class="note-body">
+        <div class="nd">In progress</div>
+        <h3>Listening for vessels at the edge</h3>
+        <p>Specialized acoustic models for edge-deployed vessel classification and detection — the current build.</p>
+      </div>
+    </article>
+  </div>
+</div>

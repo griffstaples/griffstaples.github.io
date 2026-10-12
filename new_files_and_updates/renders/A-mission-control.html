@@ -1,0 +1,315 @@
+<title>Griffin Staples — Mission Control direction</title>
+<style>
+  :root{
+    --bg-0:#0a0e0f;
+    --bg-1:#121819;
+    --panel:#161f21;
+    --line:#2a3537;
+    --text-hi:#eef4f3;
+    --text-mid:#a9b8b7;
+    --text-dim:#6b7a79;
+    --cyan:#6fd8d0;
+    --amber:#f2a65a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg-0);
+    color:var(--text-hi);
+    font-family:-apple-system,"Segoe UI",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .frame{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  .note{
+    background:var(--panel);
+    border-bottom:1px solid var(--line);
+    color:var(--text-dim);
+    font:12px/1.6 ui-monospace,"SF Mono","Roboto Mono",monospace;
+    letter-spacing:.04em;
+    padding:10px 28px;
+    text-align:center;
+  }
+  .note b{color:var(--cyan);font-weight:600;}
+
+  /* NAV */
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 0 18px;
+  }
+  .wordmark{
+    font:700 14px/1 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.14em;
+    color:var(--text-hi);
+  }
+  .wordmark span{color:var(--cyan);}
+  .navlinks{
+    display:flex;
+    gap:28px;
+    font:12px/1 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--text-mid);
+  }
+  .navlinks a{color:inherit;text-decoration:none;}
+  .navlinks a:hover{color:var(--cyan);}
+
+  /* HERO */
+  .hero{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:40px;
+    align-items:stretch;
+    padding:28px 0 16px;
+  }
+  @media (max-width:860px){ .hero{grid-template-columns:1fr;} }
+
+  .hero-copy{display:flex;flex-direction:column;justify-content:center;gap:22px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font:11px/1 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber);
+    width:fit-content;
+  }
+  .eyebrow .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--amber);
+    box-shadow:0 0 0 3px rgba(242,166,90,.18);
+  }
+  h1{
+    font-size:46px;
+    line-height:1.08;
+    font-weight:700;
+    letter-spacing:-.01em;
+    margin:0;
+    text-wrap:balance;
+    color:var(--text-hi);
+  }
+  h1 em{
+    font-style:normal;
+    color:var(--cyan);
+  }
+  .sub{
+    font-size:17px;
+    line-height:1.55;
+    color:var(--text-mid);
+    max-width:46ch;
+    margin:0;
+  }
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;}
+  .btn{
+    font:600 13px/1 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.04em;
+    padding:13px 20px;
+    border-radius:3px;
+    text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--cyan);color:#07211f;}
+  .btn-ghost{border:1px solid var(--line);color:var(--text-hi);}
+
+  /* VIDEO / SENSOR PANEL */
+  .sensor-panel{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:
+      radial-gradient(120% 90% at 30% 20%, #16302e 0%, #0d1618 55%, #0a0e0f 100%);
+    min-height:420px;
+    overflow:hidden;
+  }
+  .scan{
+    position:absolute;inset:0;
+    background:repeating-linear-gradient(
+      to bottom, rgba(111,216,208,0.035) 0px, rgba(111,216,208,0.035) 1px,
+      transparent 1px, transparent 3px
+    );
+    pointer-events:none;
+  }
+  .bracket{position:absolute;width:26px;height:26px;border:2px solid rgba(111,216,208,.55);}
+  .bracket.tl{top:16px;left:16px;border-right:none;border-bottom:none;}
+  .bracket.tr{top:16px;right:16px;border-left:none;border-bottom:none;}
+  .bracket.bl{bottom:16px;left:16px;border-right:none;border-top:none;}
+  .bracket.br{bottom:16px;right:16px;border-left:none;border-top:none;}
+
+  .placeholder-label{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    font:12px/1.6 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.08em;
+    color:var(--text-dim);
+    padding:40px;
+  }
+  .placeholder-label strong{display:block;color:var(--text-mid);font-size:13px;margin-bottom:6px;}
+
+  .telemetry{
+    position:absolute;
+    top:18px;left:52px;right:52px;
+    display:flex;justify-content:space-between;
+    font:11px/1 ui-monospace,"SF Mono",monospace;
+    color:var(--cyan);
+    letter-spacing:.06em;
+  }
+  .rec{display:flex;align-items:center;gap:6px;color:var(--amber);}
+  .rec .d{width:6px;height:6px;border-radius:50%;background:var(--amber);animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
+  @media (prefers-reduced-motion:reduce){ .rec .d{animation:none;} }
+
+  .readouts{
+    position:absolute;
+    bottom:18px;left:18px;right:18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    font-variant-numeric:tabular-nums;
+  }
+  .readout{background:rgba(10,14,15,.85);padding:10px 12px;}
+  .readout .k{font:10px/1 ui-monospace,monospace;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase;}
+  .readout .v{font:15px/1 ui-monospace,monospace;color:var(--text-hi);margin-top:5px;}
+
+  /* PROOF STRIP */
+  .proof{
+    display:flex;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    margin-top:36px;
+  }
+  .proof-item{
+    flex:1;
+    padding:18px 20px;
+    border-right:1px solid var(--line);
+  }
+  .proof-item:last-child{border-right:none;}
+  .proof-item .num{
+    font:700 24px/1 ui-monospace,"SF Mono",monospace;
+    color:var(--cyan);
+  }
+  .proof-item .label{
+    font:11px/1.5 -apple-system,sans-serif;
+    color:var(--text-dim);
+    margin-top:4px;
+  }
+  @media (max-width:700px){
+    .proof{flex-wrap:wrap;}
+    .proof-item{flex:1 1 50%;border-bottom:1px solid var(--line);}
+  }
+
+  /* FIELD LOG */
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin:56px 0 20px;
+  }
+  .section-head h2{
+    font:700 13px/1 ui-monospace,"SF Mono",monospace;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--text-hi);margin:0;
+  }
+  .section-head a{font:12px ui-monospace,monospace;color:var(--text-dim);text-decoration:none;}
+
+  .log-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-bottom:70px;}
+  @media (max-width:760px){ .log-grid{grid-template-columns:1fr;} }
+  .log-card{
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:var(--panel);
+    overflow:hidden;
+  }
+  .log-media{
+    height:190px;
+    position:relative;
+    background:linear-gradient(135deg,#132524,#0d1416 70%);
+  }
+  .log-media .placeholder-label{font-size:11px;padding:20px;}
+  .log-body{padding:18px 20px 20px;}
+  .log-meta{
+    display:flex;gap:14px;
+    font:11px ui-monospace,monospace;color:var(--text-dim);
+    letter-spacing:.04em;margin-bottom:10px;
+  }
+  .log-meta .loc{color:var(--amber);}
+  .log-body h3{margin:0 0 8px;font-size:17px;color:var(--text-hi);}
+  .log-body p{margin:0;font-size:13.5px;line-height:1.6;color:var(--text-mid);}
+</style>
+
+<div class="note">RENDER A — "Mission Control" · direction only, not final copy · <b>placeholders</b> mark media that doesn't exist yet</div>
+
+<div class="frame">
+  <nav>
+    <div class="wordmark">GRIFFIN<span>·</span>STAPLES</div>
+    <div class="navlinks">
+      <a href="#">Work</a><a href="#">About</a><a href="#">Experience</a><a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span>Active field program · UBC Marine Robotics Lab</div>
+      <h1>I build robots that <em>survive contact</em> with the real world.</h1>
+      <p class="sub">Marine &amp; field robotics engineer — ROVs, bio-inspired vehicles and edge ML, taken from CAD to the water. Formerly five years in production software, including flight control software on the ISS.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">View field work →</a>
+        <a class="btn btn-ghost" href="#">Download résumé</a>
+      </div>
+    </div>
+
+    <div class="sensor-panel">
+      <div class="scan"></div>
+      <div class="bracket tl"></div><div class="bracket tr"></div>
+      <div class="bracket bl"></div><div class="bracket br"></div>
+      <div class="telemetry">
+        <span>CAM_02 · ROV_DECK</span>
+        <span class="rec"><span class="d"></span>LIVE</span>
+      </div>
+      <div class="placeholder-label">
+        <div>
+          <strong>[ ROV field-deployment footage ]</strong>
+          Sc&apos;ianew First Nation waters, BC — to be shot on next deployment
+        </div>
+      </div>
+      <div class="readouts">
+        <div class="readout"><div class="k">Depth</div><div class="v">4.2 m</div></div>
+        <div class="readout"><div class="k">Heading</div><div class="v">184°</div></div>
+        <div class="readout"><div class="k">Status</div><div class="v">Deployed</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="proof">
+    <div class="proof-item"><div class="num">2</div><div class="label">Vehicles designed &amp; field-deployed since 2025</div></div>
+    <div class="proof-item"><div class="num">91.3%</div><div class="label">Graduate average, UBC ECE</div></div>
+    <div class="proof-item"><div class="num">$83K+</div><div class="label">Fellowships &amp; research awards</div></div>
+    <div class="proof-item"><div class="num">5 yrs</div><div class="label">Production software, incl. ISS flight systems</div></div>
+  </div>
+
+  <div class="section-head">
+    <h2>Field Log</h2>
+    <a href="#">All projects →</a>
+  </div>
+
+  <div class="log-grid">
+    <article class="log-card">
+      <div class="log-media"><div class="placeholder-label">[ Underwater ROV, sea urchin survey — photo/video placeholder ]</div></div>
+      <div class="log-body">
+        <div class="log-meta"><span>SEPT 2025 —</span><span class="loc">SC'IANEW FIRST NATION, BC</span></div>
+        <h3>Underwater ROV for population monitoring</h3>
+        <p>Designed, built and field-deployed an ROV to survey sea urchin populations in partnership with the Sc'ianew First Nation.</p>
+      </div>
+    </article>
+    <article class="log-card">
+      <div class="log-media"><div class="placeholder-label">[ Bio-inspired surface vehicle on water — video placeholder ]</div></div>
+      <div class="log-body">
+        <div class="log-meta"><span>2025–26 —</span><span class="loc">UBC MARINE ROBOTICS LAB</span></div>
+        <h3>Bio-inspired propulsion surface vehicle</h3>
+        <p>Designed, built and tested a surface vehicle driven by a bio-inspired propulsion mechanism; now developing a simulator to optimize an AUV variant's topology and train its RL controller.</p>
+      </div>
+    </article>
+  </div>
+</div>
