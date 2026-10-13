@@ -34,3 +34,24 @@ animation, proof stated in plain type instead of boxed widgets. See §4a of
   (name, role line, scroll cue), just with new copy and one real asset
   (the monocopter clip) swapped in. Tests whether better words plus one real
   visual is enough, without a new visual system at all.
+
+## Round three — C/E's system, with real media worked in
+
+Feedback: the "field log/dispatch" framing in A and B (dateline, byline,
+"FIG. 01" tags) read as tacky. C's "Featured field work" framing and E's
+spec-sheet precision were the preferred starting points — but both are
+fairly media-light, and a compelling piece of media (real video/photo) would
+make them land harder. Round three keeps the "Featured field work" label
+throughout (no "dispatch"/"field log" language anywhere) and works a
+prominent hero visual into each system a different way.
+
+- `G-minimal-hero-reel.html` — C's system almost unchanged (contour
+  background, `whoami` prompt, terminal stat block) with one large plain
+  hero video added directly under the headline, before the CTA row.
+- `H-datasheet-visual-column.html` — E's spec-sheet/data-table system, with
+  a full-width hero media break between the intro and the proof row, plus a
+  small real thumbnail per row in the work table instead of plain text rows.
+- `I-media-led-synthesis.html` — the hero video is deliberately the largest
+  element on the page; headline is shorter to make room, proof collapses to
+  one plain sentence, and "Featured field work" cards follow underneath.
+  Most media-led of the three; still no chrome, no dispatch framing.

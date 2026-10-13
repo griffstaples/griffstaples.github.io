@@ -170,6 +170,31 @@ a fast-scanning reference (useful if recruiters/hiring managers are the
 primary audience), but a full data table is a cooler, more clinical tone than
 D or F.
 
+## 4c. Round three — folding real media into C and E
+
+Next round of feedback: the "field log/dispatch" framing in A and B
+(dateline, byline, "FIG. 01" tags) read as tacky — agreed, dropped entirely,
+including the label itself ("Featured field work" is kept everywhere instead
+of "dispatch"/"field log"). C and E were the preferred starting points, but
+both are fairly media-light; the ask was to fold in one compelling piece of
+real media without losing that restraint.
+
+**G. "Minimal + Hero Reel"** — C's system kept almost exactly (contour
+background, `whoami` prompt, terminal-style stat block), with one large,
+plainly-presented hero video added directly beneath the headline. Closest to
+a straight C + media merge.
+
+**H. "Datasheet + Visual Column"** — E's spec-sheet/data-table system, with
+a full-width hero media break between the intro and the proof row, and a
+small real thumbnail added to each row of the work table instead of
+text-only rows.
+
+**I. "Media-Led Synthesis"** — the hero video is deliberately the largest
+single element on the page; the headline is shorter to give it room, and
+proof collapses to one plain sentence beneath. "Featured field work" cards
+follow, unchanged in spirit from C. The most media-forward of the three
+while keeping zero decorative chrome.
+
 ## 5. Visual identity notes
 
 - Keep the dark base (`#1C1C1C` → `#282828` gradient) — it's already good and
