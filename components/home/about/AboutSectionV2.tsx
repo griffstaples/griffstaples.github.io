@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { sourceCodePro } from "styles/Fonts";
 import { Colours } from "styles/Colours";
-import { SectionTitle } from "components/home/SectionTitle";
+import { SectionLabel } from "components/global/SectionLabel";
 import { TagList } from "components/global/TagList";
 import { ResumeIcon } from "components/global/ResumeIcon";
 import { GithubIcon } from "components/global/GithubIcon";
@@ -38,10 +38,9 @@ const DescriptionAndSkillContainer = styled.div`
   row-gap: 32px;
   justify-content: center;
   align-items: center;
-  margin: 32px 0px;
-  padding: 0 32px;
+  margin: 0px;
+  padding: 0 16px;
   max-width: 400px;
-  font-family: ${sourceCodePro.style.fontFamily};
   /* This media is based on content size so is therefore not saved as a variable */
   @media (min-width: 600px) {
     max-width: none;
@@ -57,12 +56,19 @@ const SkillsContainer = styled.div`
 `;
 
 const DescriptionAndSkillsTitle = styled.h2`
-  font-size: 20px;
-  margin: 0 0 24px 0;
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${Colours.TextDim};
+  margin: 0 0 16px 0;
 `;
 
 const DescriptionText = styled.p`
   margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: ${Colours.TextMuted};
 `;
 
 const SkillsListContainer = styled.div``;
@@ -125,7 +131,7 @@ interface Props {}
 const AboutSectionV2: React.FC<Props> = () => {
   return (
     <AboutContainer>
-      <SectionTitle id="about-title">About</SectionTitle>
+      <SectionLabel id="about-title">About</SectionLabel>
       <DescriptionAndSkillContainer>
         <DescriptionContainer>
           <DescriptionAndSkillsTitle>whoami</DescriptionAndSkillsTitle>

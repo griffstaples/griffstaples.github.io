@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { sourceCodePro } from "styles/Fonts";
-import { SectionTitle } from "components/home/SectionTitle";
+import { Colours } from "styles/Colours";
+import { SectionLabel } from "components/global/SectionLabel";
 import Button from "components/global/Button";
 import { Breakpoints } from "styles/Breakpoints";
 
@@ -9,6 +10,7 @@ const ContactsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 16px;
 `;
 
 const ContactsContentContainer = styled.div``;
@@ -29,17 +31,37 @@ const FormInputContainer = styled.div`
 `;
 
 const FormInputLabel = styled.label`
-  color: white;
-  margin-bottom: 4px;
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${Colours.TextDim};
+  margin-bottom: 8px;
+`;
+
+const fieldStyles = `
+  border-radius: 2px;
+  box-shadow: none;
+  border: 1px solid ${Colours.GunMetalBlue};
+  background-color: ${Colours.BackgroundColorDark};
+  color: ${Colours.TextRegular};
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 13px;
+
+  &::placeholder {
+    color: ${Colours.TextDim};
+  }
+
+  &:focus {
+    outline: none;
+    border-color: ${Colours.NeonBlue};
+  }
 `;
 
 const FormTextInput = styled.input`
-  border-radius: 4px;
-  box-shadow: none;
-  border: none;
-  font-family: ${sourceCodePro.style.fontFamily};
-  height: 32px;
-  padding-left: 8px;
+  ${fieldStyles}
+  height: 40px;
+  padding: 0 12px;
 `;
 
 interface FormInputProps {
@@ -80,15 +102,18 @@ const FormTextAreaContainer = styled.div`
 `;
 
 const FormTextAreaLabel = styled.label`
-  color: white;
-  margin-bottom: 4px;
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${Colours.TextDim};
+  margin-bottom: 8px;
 `;
 const CustomFormTextArea = styled.textarea`
-  border: none;
-  border-radius: 4px;
-  padding: 8px 8px;
+  ${fieldStyles}
+  padding: 10px 12px;
   height: 120px;
-  font-family: ${sourceCodePro.style.fontFamily};
+  resize: vertical;
 `;
 
 interface FormTextAreaProps {
@@ -121,7 +146,7 @@ const FormTextArea: React.FC<FormTextAreaProps> = ({
 };
 
 const SubmitButton = styled(Button)`
-  margin: 64px auto;
+  margin: 32px auto 0;
 `;
 
 interface Props {}
@@ -129,7 +154,7 @@ interface Props {}
 const ContactSection: React.FC<Props> = () => {
   return (
     <ContactsContainer>
-      <SectionTitle id="contact-title">Contact</SectionTitle>
+      <SectionLabel id="contact-title">Contact</SectionLabel>
       <ContactsContentContainer>
         <ContactForm action="https://formspree.io/f/xqkgloga" method="POST">
           <InputContainer>

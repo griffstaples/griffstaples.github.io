@@ -20,7 +20,11 @@ const HeaderWrapper = styled.div`
 `;
 
 const MainTextContainer = styled.div``;
-const MainText = styled.div``;
+const MainText = styled.div`
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 13px;
+  letter-spacing: 0.08em;
+`;
 
 const MenuOptionsContainer = styled.div`
   display: block;
@@ -51,6 +55,7 @@ const OptionText = styled.div`
   align-items: center;
   font-family: ${sourceCodePro.style.fontFamily};
   font-size: 12px;
+  letter-spacing: 0.04em;
   &:hover {
     color: ${Colours.NeonBlue};
   }

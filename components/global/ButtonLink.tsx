@@ -5,19 +5,20 @@ import { sourceCodePro } from "styles/Fonts";
 
 const LinkStyles = css`
   text-decoration: none;
-  padding: 8px 32px;
-  border-radius: 4px;
+  padding: 11px 24px;
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid white;
-  background-color: ${Colours.BackgroundColor};
+  border: 1px solid ${Colours.GunMetalBlue};
+  background-color: transparent;
   color: white;
   font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 13px;
+  letter-spacing: 0.03em;
 
   &:hover {
-    border-color: ${Colours.TextRegular};
-    box-shadow: 0px 0px 5px 5px ${Colours.NeonBlue};
+    border-color: ${Colours.NeonBlue};
     color: ${Colours.NeonBlue};
   }
 `;

@@ -7,7 +7,7 @@ import ContactSection from "components/home/ContactSection";
 import HeroSection from "components/home/hero/HeroSection";
 import ProofStrip from "components/home/hero/ProofStrip";
 import Footer from "components/home/Footer";
-import { SectionDivider } from "components/global/SectionDivider";
+import { Divider } from "components/global/Divider";
 import {
   MenuIcon,
   ResumeIcon,
@@ -26,20 +26,6 @@ const PageWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
-
-const SectionDividerConfig = {
-  width: 1000,
-  height: 300,
-  vLine: {
-    width: 1,
-    spacing: 45,
-  },
-  hLine: {
-    width: 1,
-    spacing: 45,
-  },
-  stroke: Colours.GunMetalBlue,
-};
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -60,9 +46,9 @@ const HomePageContent: React.FC = () => {
           <ProofStrip />
         </HeroWrapper>
         <ProjectSection />
-        <SectionDivider {...SectionDividerConfig} />
+        <Divider />
         <AboutSectionV2 />
-        <SectionDivider {...SectionDividerConfig} />
+        <Divider />
         <ContactSection />
         <Footer>
           <>
