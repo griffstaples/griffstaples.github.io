@@ -1,18 +1,16 @@
-import { useCustomCursor } from "hooks/useCustomCursor";
 import type { AppProps } from "next/app";
 import { Colours } from "styles/Colours";
-import { robotoFlex } from "styles/Fonts";
+import { sourceCodePro } from "styles/Fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const CustomCursor = useCustomCursor();
-
   return (
     <>
       <style jsx global>
         {`
           html,
           body {
-            font-family: ${robotoFlex.style.fontFamily};
+            font-family: ui-monospace, "SF Mono", "Roboto Mono",
+              ${sourceCodePro.style.fontFamily}, monospace;
             color: white;
             margin: 0;
             padding: 0;
@@ -26,12 +24,8 @@ export default function App({ Component, pageProps }: AppProps) {
           body::-webkit-scrollbar {
             display: none;
           }
-          * {
-            cursor: none !important;
-          }
         `}
       </style>
-      {CustomCursor}
       <Component {...pageProps}></Component>
     </>
   );

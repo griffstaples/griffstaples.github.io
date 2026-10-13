@@ -1,98 +1,126 @@
-import ButtonLink from "components/global/ButtonLink";
+import Link from "next/link";
 import styled from "styled-components";
+import { Colours } from "styles/Colours";
+import { sourceCodePro } from "styles/Fonts";
 import { SectionTitle } from "components/home/SectionTitle";
-import StandardProjectTile from "./StandardProjectTile";
-import { MediaPlaceholder } from "components/global/MediaPlaceholder";
 import { PROJECTS } from "data/projects";
 
 const ProjectsContainer = styled.div`
+  padding: 0 16px 16px;
+`;
+
+const TableScroll = styled.div`
+  overflow-x: auto;
+`;
+
+const Table = styled.table`
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+`;
+
+const Th = styled.th`
+  text-align: left;
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: ${Colours.TextDim};
+  padding: 0 16px 12px 0;
+  border-bottom: 1px solid ${Colours.GunMetalBlue};
+`;
+
+const Td = styled.td`
+  padding: 16px 16px 16px 0;
+  border-bottom: 1px solid ${Colours.GunMetalBlue};
+  font-size: 14px;
+  color: ${Colours.TextMuted};
+  vertical-align: top;
+`;
+
+const ProjectName = styled(Td)`
+  color: ${Colours.TextRegular};
+  font-weight: 600;
+  white-space: nowrap;
+`;
+
+const StackCell = styled(Td)`
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 12px;
+  color: ${Colours.NeonBlue};
+  white-space: nowrap;
+`;
+
+const LinkCell = styled(Td)`
+  text-align: right;
+  white-space: nowrap;
+`;
+
+const ViewLink = styled(Link)`
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 12px;
+  color: ${Colours.TextDim};
+  text-decoration: none;
+
+  &:hover {
+    color: ${Colours.NeonBlue};
+  }
+`;
+
+const SeeAllRow = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 0 16px;
+  padding-top: 32px;
 `;
 
-const ImageContainer = styled.div``;
+const SeeAllLink = styled(Link)`
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 13px;
+  color: ${Colours.TextMuted};
+  text-decoration: none;
 
-const VideoContainer = styled.div``;
-
-const StyledVideo = styled.video`
-  border-radius: 8px;
+  &:hover {
+    color: ${Colours.NeonBlue};
+  }
 `;
-
-const StyledImage = styled.img`
-  border-radius: 8px;
-`;
-
-const StyledSeeMoreButton = styled(ButtonLink)`
-  margin-bottom: 16px;
-`;
-
-// Content heights keep each tile's text column aligned with its media —
-// tuned per project since descriptions run different lengths.
-const CONTENT_HEIGHT_BY_SLUG: Record<string, number> = {
-  "underwater-rov": 230,
-  "bio-inspired-surface-vehicle": 230,
-  monocopter: 280,
-  "crypto-currency-trader": 207,
-  "blood-pressure-monitor": 202,
-  "comment-explorer": 240,
-  "embedding-dictionary": 240,
-};
 
 interface Props {}
 
 const ProjectsSection: React.FC<Props> = () => {
+  const featured = PROJECTS.filter((project) => project.featured);
+
   return (
     <ProjectsContainer>
       <SectionTitle id="project-title">Featured field work</SectionTitle>
-      {PROJECTS.map((project, index) => {
-        const textPosition = index % 2 === 0 ? "left" : "right";
-        return (
-          <StandardProjectTile
-            key={project.slug}
-            projectTitle={project.title}
-            projectTitlePosition={textPosition}
-            projectDescription={project.teaser}
-            descriptionTextPosition={textPosition}
-            tagList={project.stack}
-            contentHeight={CONTENT_HEIGHT_BY_SLUG[project.slug] ?? 220}
-            callToActionLink={`/projects/${project.slug}`}
-            callToActionText="View project →"
-          >
-            {project.media.type === "placeholder" && (
-              <MediaPlaceholder
-                label={project.media.placeholderLabel ?? "Media coming soon"}
-                width={project.media.width}
-                height={project.media.height}
-              />
-            )}
-            {project.media.type === "image" && (
-              <ImageContainer>
-                <StyledImage
-                  width={project.media.width}
-                  height={project.media.height}
-                  alt={project.media.alt}
-                  src={project.media.src}
-                />
-              </ImageContainer>
-            )}
-            {project.media.type === "video" && (
-              <VideoContainer>
-                <StyledVideo
-                  src={project.media.src}
-                  width={project.media.width}
-                  height={project.media.height}
-                  poster={project.media.poster}
-                  controls
-                />
-              </VideoContainer>
-            )}
-          </StandardProjectTile>
-        );
-      })}
-      <StyledSeeMoreButton href="/projects">See projects</StyledSeeMoreButton>
+      <TableScroll>
+        <Table>
+          <thead>
+            <tr>
+              <Th>Project</Th>
+              <Th>Result</Th>
+              <Th>Stack</Th>
+              <Th aria-hidden />
+            </tr>
+          </thead>
+          <tbody>
+            {featured.map((project) => (
+              <tr key={project.slug}>
+                <ProjectName>{project.shortTitle ?? project.title}</ProjectName>
+                <Td>{project.teaser}</Td>
+                <StackCell>{project.stack.join(" · ")}</StackCell>
+                <LinkCell>
+                  <ViewLink href={`/projects/${project.slug}`}>
+                    view →
+                  </ViewLink>
+                </LinkCell>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </TableScroll>
+      <SeeAllRow>
+        <SeeAllLink href="/projects">See all projects →</SeeAllLink>
+      </SeeAllRow>
     </ProjectsContainer>
   );
 };

@@ -18,15 +18,20 @@ export interface ProjectMedia {
 export interface Project {
   slug: string;
   title: string;
+  // Terser label for the homepage table's "Project" column — falls back
+  // to `title` when omitted.
+  shortTitle?: string;
   status: string;
   metaLine: string;
-  // Short teaser shown on the homepage tile.
+  // Short teaser/result shown on the homepage table and in meta descriptions.
   teaser: string;
   // Short, recruiter-skimmable bullets shown on the project detail page.
   summary: string[];
   stack: string[];
   media: ProjectMedia;
   links: ProjectLink[];
+  // Shown in the homepage "Featured field work" table.
+  featured: boolean;
 }
 
 // Field robotics work first, then legacy software projects — see
@@ -35,16 +40,17 @@ export const PROJECTS: Project[] = [
   {
     slug: "underwater-rov",
     title: "Underwater ROV — Sea Urchin Survey",
+    shortTitle: "Underwater ROV",
     status: "Fielded · Sept 2025",
     metaLine: "UBC Marine Robotics Lab, with the Sc'ianew First Nation",
     teaser:
-      "Designed, built and field-deployed an underwater ROV for sea urchin population monitoring, in partnership with the Sc'ianew First Nation.",
+      "Fielded with the Sc'ianew First Nation for sea urchin population monitoring.",
     summary: [
       "Designed and built an underwater ROV from the ground up — mechanical design, electronics and control software — for a real field survey, not a lab demo.",
       "Deployed it on-site with the Sc'ianew First Nation to support sea urchin population monitoring.",
       "Owned the full stack: CAD and fabrication through to real-time telemetry, under the reliability pressure of an actual field deployment.",
     ],
-    stack: ["ROV design", "Embedded systems", "Real-time telemetry", "CAD / fabrication"],
+    stack: ["CAD", "Embedded", "Telemetry"],
     media: {
       type: "placeholder",
       placeholderLabel: "Photo or video from the field deployment — coming soon",
@@ -52,20 +58,22 @@ export const PROJECTS: Project[] = [
       height: 240,
     },
     links: [],
+    featured: true,
   },
   {
     slug: "bio-inspired-surface-vehicle",
     title: "Bio-Inspired Surface Vehicle",
+    shortTitle: "Bio-inspired surface vehicle",
     status: "In development · 2025–26",
     metaLine: "UBC Marine Robotics Lab",
     teaser:
-      "Designed, built and tested a surface vehicle driven by a bio-inspired propulsion mechanism.",
+      "Built and tested a propulsion mechanism inspired by nature; AUV variant in simulation.",
     summary: [
       "Designed and prototyped a surface vehicle using a propulsion mechanism inspired by nature, rather than a conventional propeller.",
       "Built and on-water tested the vehicle to validate the propulsion concept.",
       "Now developing a simulator to optimize the topology of an AUV variant and train its deep reinforcement learning controller.",
     ],
-    stack: ["Vehicle design", "CAD", "Simulation", "Reinforcement learning"],
+    stack: ["Simulation", "RL", "CAD"],
     media: {
       type: "placeholder",
       placeholderLabel: "Video of the vehicle underway — coming soon",
@@ -73,21 +81,45 @@ export const PROJECTS: Project[] = [
       height: 240,
     },
     links: [],
+    featured: true,
+  },
+  {
+    slug: "vessel-classification",
+    title: "Edge ML Vessel Classification",
+    shortTitle: "Vessel classification, edge ML",
+    status: "In development",
+    metaLine: "UBC Marine Robotics Lab",
+    teaser:
+      "Acoustic models for edge-deployed vessel detection and classification.",
+    summary: [
+      "Developing specialized acoustic models to classify and detect vessels from edge-deployed hardware.",
+      "Early-stage, ongoing work — write-up to follow as results land.",
+    ],
+    stack: ["ML", "Edge"],
+    media: {
+      type: "placeholder",
+      placeholderLabel: "Spectrogram / results visualization — coming soon",
+      width: 320,
+      height: 240,
+    },
+    links: [],
+    featured: true,
   },
   {
     slug: "monocopter",
     title: "Monocopter Flight Avionics",
+    shortTitle: "Monocopter avionics",
     status: "Flown · 2020",
     metaLine: "Royal Military College of Canada",
     teaser:
-      "Flight avionics for a 375 g single-bladed helicopter (monocopter), culminating in a successful test flight.",
+      "Flight avionics for a 375g single-bladed helicopter, successful test flight.",
     summary: [
       "Designed, programmed and manufactured flight avionics for a 375 g single-bladed helicopter.",
       "Built a Bluetooth telemetry link for real-time monitoring during flight.",
       "Automated wind-tunnel data acquisition with a custom script — saved 2 hours of labour per run and eliminated operator error.",
       "Culminated in a successful test flight.",
     ],
-    stack: ["Arduino", "C/C++", "Embedded systems", "Flight avionics"],
+    stack: ["Arduino", "C/C++"],
     media: {
       type: "video",
       src: "/projects/monocopter_testflight.mp4",
@@ -97,6 +129,7 @@ export const PROJECTS: Project[] = [
       height: 455,
     },
     links: [],
+    featured: true,
   },
   {
     slug: "crypto-currency-trader",
@@ -125,6 +158,7 @@ export const PROJECTS: Project[] = [
         external: true,
       },
     ],
+    featured: false,
   },
   {
     slug: "blood-pressure-monitor",
@@ -153,6 +187,7 @@ export const PROJECTS: Project[] = [
         external: true,
       },
     ],
+    featured: false,
   },
   {
     slug: "comment-explorer",
@@ -177,6 +212,7 @@ export const PROJECTS: Project[] = [
     links: [
       { label: "Try it live", href: "https://www.commentexplorer.com", external: true },
     ],
+    featured: false,
   },
   {
     slug: "embedding-dictionary",
@@ -204,6 +240,7 @@ export const PROJECTS: Project[] = [
         external: true,
       },
     ],
+    featured: false,
   },
 ];
 

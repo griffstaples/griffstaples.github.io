@@ -5,14 +5,9 @@
  * content loads from the CDN. For this to work, the font needs to be loaded where
  * it us used (i.e. it cannot exist in a utility file)
  */
-import { Roboto_Flex, Source_Code_Pro, Archivo } from "@next/font/google";
+import { Source_Code_Pro, Archivo } from "@next/font/google";
 
 export const sourceCodePro = Source_Code_Pro({
-  subsets: ["latin"],
-});
-
-export const robotoFlex = Roboto_Flex({
-  weight: "100",
   subsets: ["latin"],
 });
 
