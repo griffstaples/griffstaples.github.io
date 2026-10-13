@@ -60,23 +60,6 @@ export const DownArrow: React.FC<Props> = ({ className }) => {
   );
 };
 
-export const UnderConstructionIcon: React.FC<Props> = ({ className }) => {
-  return (
-    <AttributionContainer className={className}>
-      <StyledLink href="https://iconscout.com/icons/manager" target="_blank">
-        Manager Icon
-      </StyledLink>{" "}
-      by{" "}
-      <StyledLink
-        href="https://iconscout.com/contributors/iconscout"
-        target="_blank"
-      >
-        IconScout Store
-      </StyledLink>
-    </AttributionContainer>
-  );
-};
-
 export const ResumeIcon: React.FC<Props> = ({ className }) => {
   return (
     <AttributionContainer className={className}>

@@ -9,18 +9,18 @@ import { LinkedInIcon } from "components/global/LinkedInIcon";
 import ButtonLink from "components/global/ButtonLink";
 
 const TAG_NAMES = [
-  "React",
-  "Javascript",
-  "Typescript",
-  "NextJS",
-  "StyledComponents",
-  "HTML",
-  "CSS",
+  "ROV & Vehicle Design",
+  "Onshape CAD",
+  "Arduino",
+  "ESP32",
+  "Reinforcement Learning",
   "Python",
-  "Flask",
-  "AWS Cognito",
-  "DynamoDB",
-  "Postgres",
+  "C++",
+  "TypeScript",
+  "React",
+  "NextJS",
+  "Linux",
+  "Google Cloud",
 ];
 
 const AboutContainer = styled.div`
@@ -130,18 +130,20 @@ const AboutSectionV2: React.FC<Props> = () => {
         <DescriptionContainer>
           <DescriptionAndSkillsTitle>whoami</DescriptionAndSkillsTitle>
           <DescriptionText>
-            I&apos;m a born and raised Vancouverite living and working in the
-            city.
+            I&apos;m an MASc candidate in Electrical and Computer Engineering
+            at UBC&apos;s Marine Robotics Lab, where I design, build and
+            field-deploy robotic systems — from an underwater ROV fielded
+            with the Sc&apos;ianew First Nation to a bio-inspired surface
+            vehicle.
             <br />
             <br />
-            I have experience developing software in various industries
-            including aerospace, FinTech and PropTech and am currently working
-            as a freelance software developer specializing in web application
-            development.
+            Before robotics, I spent nearly five years as a professional
+            software developer across aerospace, FinTech and PropTech,
+            including flight control software for a centrifuge on the ISS.
             <br />
             <br />
-            Some of my major interests include AI, robotics and languages (the
-            human kind).
+            I&apos;m a born and raised Vancouverite, and I&apos;m currently
+            seeking hands-on robotics roles — open to field work.
           </DescriptionText>
         </DescriptionContainer>
         <SkillsContainer>
@@ -153,7 +155,7 @@ const AboutSectionV2: React.FC<Props> = () => {
       </DescriptionAndSkillContainer>
       <RelatedLinksContainer>
         <RelatedLinks>
-          <IconButton href="GriffinStaples_CV.pdf" target="_blank">
+          <IconButton href="GriffinStaples_Resume.pdf" target="_blank">
             <IconLinkContent>
               <ResumeIcon size={24} className="whiteIcon" />
               <ResumeIcon

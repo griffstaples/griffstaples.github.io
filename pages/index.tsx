@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Griffin Staples, Software Developer</title>
+        <title>Griffin Staples — Marine & Field Robotics Engineer</title>
         <meta
           name="description"
-          content="An introduction to me and my software experience, including past and present work and projects."
+          content="Griffin Staples designs and field-deploys marine and field robotic systems, with five years of production software experience behind him."
         />
         <link rel="icon" href="/website_favicon.svg" />
       </Head>

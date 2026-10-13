@@ -4,12 +4,12 @@ import { Colours } from "styles/Colours";
 import Header from "components/home/Header";
 import ProjectSection from "components/home/projects/ProjectSection";
 import ContactSection from "components/home/ContactSection";
-import HomeSection from "components/home/HomeSection";
+import HeroSection from "components/home/hero/HeroSection";
+import ProofStrip from "components/home/hero/ProofStrip";
 import Footer from "components/home/Footer";
 import { SectionDivider } from "components/global/SectionDivider";
 import {
   MenuIcon,
-  DownArrow,
   ResumeIcon,
   GithubIcon,
   LinkedInIcon,
@@ -46,13 +46,19 @@ const ContentWrapper = styled.div`
   max-width: 800px;
 `;
 
+const HeroWrapper = styled.div`
+  padding: 8px 16px 0;
+`;
+
 const HomePageContent: React.FC = () => {
   return (
     <PageWrapper>
       <ContentWrapper>
         <Header />
-        <HomeSection />
-        <SectionDivider {...SectionDividerConfig} />
+        <HeroWrapper>
+          <HeroSection />
+          <ProofStrip />
+        </HeroWrapper>
         <AboutSectionV2 />
         <SectionDivider {...SectionDividerConfig} />
         <ProjectSection />
@@ -61,7 +67,6 @@ const HomePageContent: React.FC = () => {
         <Footer>
           <>
             <MenuIcon />
-            <DownArrow />
             <ResumeIcon />
             <GithubIcon />
             <LinkedInIcon />
