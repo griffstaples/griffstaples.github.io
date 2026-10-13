@@ -68,3 +68,25 @@ plain background?
   underwater light caustics stands in for it — enough to judge the legibility
   and tone of "text over moving water," not the final footage. Proof row and
   work table stay off the video, plain, same as E — only the hero changes.
+
+J shipped: it's now implemented for real in the live site (hero, fonts,
+section headings, dividers), not just a static mockup. See `../PLAN.md`
+§4c and the site's git history on this branch for what changed.
+
+## Round five — About/Contact, left-justified like the work table
+
+Griffin liked the left-aligned "Featured field work" table and asked for
+About/Contact to follow the same alignment instead of staying centered
+(their pre-existing layout, inherited from before this redesign). All
+three reuse the live site's actual current copy so they're realistic
+previews, not placeholder text.
+
+- `K-spec-column.html` — reuses the hero's fixed label-column grid (same
+  140–200px label + content split as the hero's spec list) for both About
+  and Contact. Strongest visual echo of the hero.
+- `L-table-echo.html` — skills and links rendered as literal table rows
+  matching `table.work`'s styling exactly; the contact form becomes a
+  table too, one row per field (label cell + input cell).
+- `M-single-column.html` — the lightest-structure option: one flowing
+  left-aligned column, no grid or table scaffolding, just consistent
+  small-label section markers and generous whitespace.
