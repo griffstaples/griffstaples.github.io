@@ -2,11 +2,19 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Colours } from "styles/Colours";
 import { sourceCodePro } from "styles/Fonts";
-import { SectionTitle } from "components/home/SectionTitle";
 import { PROJECTS } from "data/projects";
 
 const ProjectsContainer = styled.div`
   padding: 0 16px 16px;
+`;
+
+const SectionLabel = styled.div`
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${Colours.TextDim};
+  margin-bottom: 18px;
 `;
 
 const TableScroll = styled.div`
@@ -91,7 +99,7 @@ const ProjectsSection: React.FC<Props> = () => {
 
   return (
     <ProjectsContainer>
-      <SectionTitle id="project-title">Featured field work</SectionTitle>
+      <SectionLabel id="project-title">Featured field work</SectionLabel>
       <TableScroll>
         <Table>
           <thead>

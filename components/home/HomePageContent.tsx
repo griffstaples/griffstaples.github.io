@@ -59,9 +59,9 @@ const HomePageContent: React.FC = () => {
           <HeroSection />
           <ProofStrip />
         </HeroWrapper>
-        <AboutSectionV2 />
-        <SectionDivider {...SectionDividerConfig} />
         <ProjectSection />
+        <SectionDivider {...SectionDividerConfig} />
+        <AboutSectionV2 />
         <SectionDivider {...SectionDividerConfig} />
         <ContactSection />
         <Footer>

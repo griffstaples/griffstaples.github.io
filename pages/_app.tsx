@@ -1,6 +1,5 @@
 import type { AppProps } from "next/app";
 import { Colours } from "styles/Colours";
-import { sourceCodePro } from "styles/Fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -9,8 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {`
           html,
           body {
-            font-family: ui-monospace, "SF Mono", "Roboto Mono",
-              ${sourceCodePro.style.fontFamily}, monospace;
+            font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
             color: white;
             margin: 0;
             padding: 0;

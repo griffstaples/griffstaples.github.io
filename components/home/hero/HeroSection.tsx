@@ -185,8 +185,8 @@ export const HeroSection: React.FC = () => {
         </Spec>
         <div>
           <Headline>
-            Robots that have to work{" "}
-            <Highlight>outside the lab, on the first try.</Highlight>
+            Hi, I&apos;m Griffin —{" "}
+            <Highlight>I build robots that work out in the field.</Highlight>
           </Headline>
           <Subtitle>
             I&apos;m an MASc candidate in Electrical and Computer Engineering
