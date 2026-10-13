@@ -3,7 +3,7 @@ import { useScrollToId } from "hooks/useScrollToId";
 import { useState, useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { Colours } from "styles/Colours";
-import { sourceCodePro } from "styles/Fonts";
+import { sourceCodePro, monospaceFontStack } from "styles/Fonts";
 import { MenuOption } from "types/MenuTypes";
 
 const MenuOptionContainer = styled.div`
@@ -18,7 +18,7 @@ const DropDownContainer = styled.ul<{ isOpen: boolean }>`
   position: absolute;
   right: ${(props) => (props.isOpen ? "0px" : "-100px")};
   color: white;
-  font-family: ${sourceCodePro.style.fontFamily};
+  font-family: ${monospaceFontStack(sourceCodePro.style.fontFamily)};
   flex-direction: column;
   font-size: 14px;
   align-items: end;

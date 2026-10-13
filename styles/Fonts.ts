@@ -11,6 +11,12 @@ export const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
 });
 
+// Prefers the OS's native monospace face (matches the render-J mockups,
+// which never loaded a custom monospace webfont) and only falls back to
+// the self-hosted Source Code Pro where no system monospace is available.
+export const monospaceFontStack = (fallback: string) =>
+  `ui-monospace, "SF Mono", "Roboto Mono", ${fallback}, monospace`;
+
 export const archivoNarrow = Archivo({
   weight: "100",
   subsets: ["latin"],

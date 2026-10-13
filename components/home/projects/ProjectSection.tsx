@@ -10,7 +10,7 @@ const ProjectsContainer = styled.div`
 
 const SectionLabel = styled.div`
   font-family: ${sourceCodePro.style.fontFamily};
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: ${Colours.TextDim};
@@ -117,9 +117,7 @@ const ProjectsSection: React.FC<Props> = () => {
                 <Td>{project.teaser}</Td>
                 <StackCell>{project.stack.join(" · ")}</StackCell>
                 <LinkCell>
-                  <ViewLink href={`/projects/${project.slug}`}>
-                    view →
-                  </ViewLink>
+                  <ViewLink href={`/projects/${project.slug}`}>view →</ViewLink>
                 </LinkCell>
               </tr>
             ))}

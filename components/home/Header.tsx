@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Breakpoints } from "styles/Breakpoints";
 import { Colours } from "styles/Colours";
-import { sourceCodePro } from "styles/Fonts";
+import { sourceCodePro, monospaceFontStack } from "styles/Fonts";
 import { useScrollToId } from "hooks/useScrollToId";
 import MenuOptions from "components/home/MenuOptions";
 
@@ -21,7 +21,7 @@ const HeaderWrapper = styled.div`
 
 const MainTextContainer = styled.div``;
 const MainText = styled.div`
-  font-family: ${sourceCodePro.style.fontFamily};
+  font-family: ${monospaceFontStack(sourceCodePro.style.fontFamily)};
   font-size: 13px;
   letter-spacing: 0.08em;
 `;
@@ -53,7 +53,7 @@ const NavOption = styled.li.attrs({ className: "hoverMouse" })`
 
 const OptionText = styled.div`
   align-items: center;
-  font-family: ${sourceCodePro.style.fontFamily};
+  font-family: ${monospaceFontStack(sourceCodePro.style.fontFamily)};
   font-size: 12px;
   letter-spacing: 0.04em;
   &:hover {
