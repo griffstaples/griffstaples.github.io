@@ -8,16 +8,20 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid ${Colours.GunMetalBlue};
-  background-color: transparent;
-  color: white;
   font-family: ${sourceCodePro.style.fontFamily};
   font-size: 13px;
   letter-spacing: 0.03em;
+`;
+
+const StyledPrimaryButton = styled(StyledButton)`
+  border: none;
+  background-color: ${Colours.NeonBlue};
+  color: #06292d;
+  font-weight: 700;
 
   &:hover {
-    border-color: ${Colours.NeonBlue};
-    color: ${Colours.NeonBlue};
+    color: #06292d;
+    opacity: 0.9;
   }
 `;
 
@@ -28,16 +32,19 @@ interface Props {
   type?: "button" | "reset" | "submit";
 }
 
-const Button: React.FC<Props> = ({ onClick, children, className, type }) => {
+export const PrimaryButton: React.FC<Props> = ({
+  onClick,
+  children,
+  className,
+  type,
+}) => {
   return (
-    <StyledButton
+    <StyledPrimaryButton
       className={className}
       onClick={onClick}
       type={type || "button"}
     >
       {children}
-    </StyledButton>
+    </StyledPrimaryButton>
   );
 };
-
-export default Button;

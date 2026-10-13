@@ -2,27 +2,22 @@ import styled from "styled-components";
 import { sourceCodePro } from "styles/Fonts";
 import { Colours } from "styles/Colours";
 import { SectionLabel } from "components/global/SectionLabel";
-import Button from "components/global/Button";
-import { Breakpoints } from "styles/Breakpoints";
+import { PrimaryButton } from "components/global/Button";
 
 const ContactsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 0 16px;
 `;
 
 const ContactsContentContainer = styled.div``;
 
-const ContactForm = styled.form``;
+const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+`;
 
 const InputContainer = styled.div`
-  margin: 16px 0;
-  width: 240px;
-  @media (min-width: ${Breakpoints.small}) {
-    width: 360px;
-  }
+  margin-bottom: 18px;
 `;
 
 const FormInputContainer = styled.div`
@@ -40,6 +35,7 @@ const FormInputLabel = styled.label`
 `;
 
 const fieldStyles = `
+  width: 100%;
   border-radius: 2px;
   box-shadow: none;
   border: 1px solid ${Colours.GunMetalBlue};
@@ -145,8 +141,9 @@ const FormTextArea: React.FC<FormTextAreaProps> = ({
   );
 };
 
-const SubmitButton = styled(Button)`
-  margin: 32px auto 0;
+const SubmitButton = styled(PrimaryButton)`
+  align-self: flex-start;
+  margin-top: 4px;
 `;
 
 interface Props {}

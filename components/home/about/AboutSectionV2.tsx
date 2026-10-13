@@ -1,12 +1,9 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { sourceCodePro } from "styles/Fonts";
 import { Colours } from "styles/Colours";
 import { SectionLabel } from "components/global/SectionLabel";
 import { TagList } from "components/global/TagList";
-import { ResumeIcon } from "components/global/ResumeIcon";
-import { GithubIcon } from "components/global/GithubIcon";
-import { LinkedInIcon } from "components/global/LinkedInIcon";
-import ButtonLink from "components/global/ButtonLink";
 
 const TAG_NAMES = [
   "ROV & Vehicle Design",
@@ -23,107 +20,103 @@ const TAG_NAMES = [
   "Google Cloud",
 ];
 
+const RELATED_LINKS = [
+  { name: "Résumé", href: "GriffinStaples_Resume.pdf", external: false },
+  { name: "Github", href: "https://github.com/griffstaples", external: true },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/griffinstaples",
+    external: true,
+  },
+];
+
 const AboutContainer = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-`;
-
-const DescriptionAndSkillContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 32px;
-  justify-content: center;
-  align-items: center;
-  margin: 0px;
   padding: 0 16px;
-  max-width: 400px;
-  /* This media is based on content size so is therefore not saved as a variable */
-  @media (min-width: 600px) {
-    max-width: none;
-    flex-direction: row;
-    column-gap: 64px;
-    justify-content: space-between;
-    align-items: start;
-  }
 `;
 
-const SkillsContainer = styled.div`
+const Banner = styled.div`
   width: 100%;
+  aspect-ratio: 16 / 8;
+  border-radius: 6px;
+  border: 1px dashed ${Colours.GunMetalBlue};
+  background-color: ${Colours.BackgroundColorDark};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 28px;
 `;
 
-const DescriptionAndSkillsTitle = styled.h2`
+const BannerLabel = styled.span`
   font-family: ${sourceCodePro.style.fontFamily};
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 12px;
   color: ${Colours.TextDim};
-  margin: 0 0 16px 0;
+  line-height: 1.6;
 `;
 
 const DescriptionText = styled.p`
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.65;
+  margin: 0 0 18px 0;
+  font-size: 15.5px;
+  line-height: 1.7;
   color: ${Colours.TextMuted};
+  max-width: 62ch;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
-const SkillsListContainer = styled.div``;
+const MiniLabel = styled.h2`
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: ${Colours.TextDim};
+  margin: 28px 0 12px;
+`;
 
-const DescriptionContainer = styled.div`
-  width: 100%;
+const MutedTagList = styled(TagList)`
+  li {
+    border-color: ${Colours.GunMetalBlue};
+    color: ${Colours.TextMuted};
+  }
+`;
+
+const LinksColumn = styled.div`
   display: flex;
   flex-direction: column;
-`;
-const RelatedLinksContainer = styled.div`
-  width: 100%;
+  margin-top: 4px;
 `;
 
-const RelatedLinks = styled.div`
+const LinkRow = styled(Link)`
   display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 32px 48px;
+  padding: 12px 0;
+  border-bottom: 1px solid ${Colours.GunMetalBlue};
+  text-decoration: none;
+  color: inherit;
 
-  @media (min-width: 600px) {
-    flex-direction: row;
-    column-gap: 16px;
-    padding: 32px 32px;
+  &:first-child {
+    border-top: 1px solid ${Colours.GunMetalBlue};
+  }
+
+  &:hover .arrow {
+    color: ${Colours.NeonBlue};
   }
 `;
 
-const IconButton = styled(ButtonLink)`
-  padding: 8px 16px;
-  width: 100%;
-
-  // not 400px due to 16px horizontal padding
-  max-width: 368px;
-
-  /* border-radius: 4px; */
-  .whiteIcon {
-    display: block;
-  }
-  &:hover .whiteIcon {
-    display: none;
-    transition: ease-in 0.15s;
-  }
-  .blueIcon {
-    display: none;
-  }
-  &:hover .blueIcon {
-    display: block;
-    transition: ease-in 0.15s;
-  }
+const LinkName = styled.span`
+  font-size: 14px;
+  color: ${Colours.TextRegular};
 `;
 
-const IconLinkContent = styled.div`
-  display: flex;
-  column-gap: 8px;
+const LinkArrow = styled.span.attrs({ className: "arrow" })`
+  font-family: ${sourceCodePro.style.fontFamily};
+  font-size: 12px;
+  color: ${Colours.TextDim};
 `;
 
 interface Props {}
@@ -132,78 +125,46 @@ const AboutSectionV2: React.FC<Props> = () => {
   return (
     <AboutContainer>
       <SectionLabel id="about-title">About</SectionLabel>
-      <DescriptionAndSkillContainer>
-        <DescriptionContainer>
-          <DescriptionAndSkillsTitle>whoami</DescriptionAndSkillsTitle>
-          <DescriptionText>
-            I&apos;m an MASc candidate in Electrical and Computer Engineering
-            at UBC&apos;s Marine Robotics Lab, where I design, build and
-            field-deploy robotic systems — from an underwater ROV fielded
-            with the Sc&apos;ianew First Nation to a bio-inspired surface
-            vehicle.
-            <br />
-            <br />
-            Before robotics, I spent nearly five years as a professional
-            software developer across aerospace, FinTech and PropTech,
-            including flight control software for a centrifuge on the ISS.
-            <br />
-            <br />
-            I&apos;m a born and raised Vancouverite, and I&apos;m currently
-            seeking hands-on robotics roles — open to field work.
-          </DescriptionText>
-        </DescriptionContainer>
-        <SkillsContainer>
-          <DescriptionAndSkillsTitle>skills</DescriptionAndSkillsTitle>
-          <SkillsListContainer>
-            <TagList tags={TAG_NAMES} />
-          </SkillsListContainer>
-        </SkillsContainer>
-      </DescriptionAndSkillContainer>
-      <RelatedLinksContainer>
-        <RelatedLinks>
-          <IconButton href="GriffinStaples_Resume.pdf" target="_blank">
-            <IconLinkContent>
-              <ResumeIcon size={24} className="whiteIcon" />
-              <ResumeIcon
-                size={24}
-                className="blueIcon"
-                stroke={Colours.NeonBlue}
-              />
-              Resume
-            </IconLinkContent>
-          </IconButton>
-          <IconButton
-            isExternal
-            href="https://github.com/griffstaples"
-            target="_blank"
+
+      <Banner>
+        <BannerLabel>
+          [ Wide field photo — e.g. on the water, mid-deployment, not a
+          studio headshot ]
+        </BannerLabel>
+      </Banner>
+
+      <DescriptionText>
+        I&apos;m an MASc candidate in Electrical and Computer Engineering at
+        UBC&apos;s Marine Robotics Lab, where I design, build and
+        field-deploy robotic systems — from an underwater ROV fielded with
+        the Sc&apos;ianew First Nation to a bio-inspired surface vehicle.
+      </DescriptionText>
+      <DescriptionText>
+        Before robotics, I spent nearly five years as a professional
+        software developer across aerospace, FinTech and PropTech, including
+        flight control software for a centrifuge on the ISS.
+      </DescriptionText>
+      <DescriptionText>
+        I&apos;m a born and raised Vancouverite, and I&apos;m currently
+        seeking hands-on robotics roles — open to field work.
+      </DescriptionText>
+
+      <MiniLabel>Skills</MiniLabel>
+      <MutedTagList tags={TAG_NAMES} />
+
+      <MiniLabel>Elsewhere</MiniLabel>
+      <LinksColumn>
+        {RELATED_LINKS.map((link) => (
+          <LinkRow
+            key={link.name}
+            href={link.href}
+            target={link.external ? "_blank" : "_self"}
           >
-            <IconLinkContent>
-              <GithubIcon size={24} className="whiteIcon" />
-              <GithubIcon
-                size={24}
-                className="blueIcon"
-                stroke={Colours.NeonBlue}
-              />
-              Github
-            </IconLinkContent>
-          </IconButton>
-          <IconButton
-            isExternal
-            href="https://www.linkedin.com/in/griffinstaples"
-            target="_blank"
-          >
-            <IconLinkContent>
-              <LinkedInIcon size={24} className="whiteIcon" />
-              <LinkedInIcon
-                size={24}
-                className="blueIcon"
-                stroke={Colours.NeonBlue}
-              />
-              LinkedIn
-            </IconLinkContent>
-          </IconButton>
-        </RelatedLinks>
-      </RelatedLinksContainer>
+            <LinkName>{link.name}</LinkName>
+            <LinkArrow>↗</LinkArrow>
+          </LinkRow>
+        ))}
+      </LinksColumn>
     </AboutContainer>
   );
 };
