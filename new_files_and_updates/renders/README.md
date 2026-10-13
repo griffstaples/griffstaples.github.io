@@ -55,3 +55,16 @@ prominent hero visual into each system a different way.
   element on the page; headline is shorter to make room, proof collapses to
   one plain sentence, and "Featured field work" cards follow underneath.
   Most media-led of the three; still no chrome, no dispatch framing.
+
+## Round four — E, with a video playing behind the hero text
+
+E (`grid-discipline`) was the preferred direction. This round asks: what if
+the spec list + headline sat on top of a looping background video instead of
+plain background?
+
+- `J-grid-discipline-video-hero.html` — same spec column + headline layout
+  as E, now overlaid on a full-bleed looping reel with a left-weighted
+  scrim for legibility. No real footage exists yet, so a canvas animation of
+  underwater light caustics stands in for it — enough to judge the legibility
+  and tone of "text over moving water," not the final footage. Proof row and
+  work table stay off the video, plain, same as E — only the hero changes.
