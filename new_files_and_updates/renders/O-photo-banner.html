@@ -1,0 +1,126 @@
+<title>About/Contact — Photo Banner direction</title>
+<style>
+  :root{
+    --bg-0:#1c1c1c; --bg-1:#282828; --line:#3a3a3a;
+    --text-hi:#ffffff; --text-mid:#b4b4b2; --text-dim:#7a7a78; --cyan:#00efff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:linear-gradient(to bottom,var(--bg-0),var(--bg-1));
+    color:var(--text-hi);
+    font-family:-apple-system,"Segoe UI",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:ui-monospace,"SF Mono","Roboto Mono",monospace;}
+  .frame{max-width:640px;margin:0 auto;padding:0 16px;}
+  .note{
+    background:#141414;border-bottom:1px solid var(--line);
+    color:var(--text-dim);font-size:12px;letter-spacing:.04em;
+    padding:10px 16px;text-align:center;
+  }
+  .note b{color:var(--cyan);font-weight:600;}
+
+  .divider{border-top:1px solid var(--line);margin:48px 0;}
+
+  .label{
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--text-dim);margin-bottom:18px;
+  }
+
+  section{padding:40px 0;}
+
+  .banner{
+    width:100%;aspect-ratio:16/8;border-radius:6px;border:1px dashed var(--line);
+    background:#131313;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:20px;margin-bottom:12px;
+  }
+  .banner span{font-size:12px;color:var(--text-dim);line-height:1.6;}
+  .caption{font-size:11.5px;color:var(--text-dim);margin-bottom:28px;}
+
+  .about-body p{font-size:15.5px;line-height:1.7;color:var(--text-mid);margin:0 0 18px;}
+  .about-body p:last-child{margin-bottom:0;}
+
+  .mini-label{
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);
+    margin:28px 0 12px;
+  }
+  .skills-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{border:1px solid var(--line);border-radius:4px;padding:6px 10px;font-size:12px;color:var(--text-mid);}
+
+  .links-col{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+  .link-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;
+  }
+  .link-row:first-child{border-top:1px solid var(--line);}
+  .link-row .name{font-size:14px;color:var(--text-hi);}
+  .link-row .arrow{font-size:12px;color:var(--text-dim);}
+  .link-row:hover .arrow{color:var(--cyan);}
+
+  form{display:flex;flex-direction:column;gap:18px;max-width:420px;}
+  .field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;}
+  .field input, .field textarea{
+    width:100%;background:var(--bg-0);border:1px solid var(--line);border-radius:2px;
+    color:var(--text-hi);font-size:13px;padding:10px 12px;font-family:inherit;
+  }
+  .field textarea{height:100px;resize:vertical;}
+  .send-btn{
+    align-self:flex-start;background:var(--cyan);color:#06292d;font-weight:700;
+    border:none;border-radius:2px;padding:11px 22px;font-size:13px;cursor:pointer;margin-top:4px;
+  }
+</style>
+
+<div class="note">RENDER O — "Photo Banner" · based on M · a wide field photo leads the section, then the same flowing left-aligned column</div>
+
+<div class="frame">
+  <section>
+    <div class="label mono">About</div>
+    <div class="banner mono">
+      <span>[ Wide field photo — e.g. on the water, mid-deployment, not a studio headshot ]</span>
+    </div>
+    <div class="caption mono">Sc&apos;ianew First Nation waters, BC — ROV deployment</div>
+
+    <div class="about-body">
+      <p>I'm an MASc candidate in Electrical and Computer Engineering at UBC's Marine Robotics Lab, where I design, build and field-deploy robotic systems — from an underwater ROV fielded with the Sc'ianew First Nation to a bio-inspired surface vehicle.</p>
+      <p>Before robotics, I spent nearly five years as a professional software developer across aerospace, FinTech and PropTech, including flight control software for a centrifuge on the ISS.</p>
+      <p>I'm a born and raised Vancouverite, and I'm currently seeking hands-on robotics roles — open to field work.</p>
+    </div>
+
+    <div class="mini-label mono">Skills</div>
+    <div class="skills-row mono">
+      <span class="tag">ROV &amp; Vehicle Design</span><span class="tag">Onshape CAD</span>
+      <span class="tag">Arduino</span><span class="tag">ESP32</span>
+      <span class="tag">Reinforcement Learning</span><span class="tag">Python</span>
+      <span class="tag">C++</span><span class="tag">TypeScript</span>
+    </div>
+
+    <div class="mini-label mono">Elsewhere</div>
+    <div class="links-col mono">
+      <a class="link-row" href="#"><span class="name">Résumé</span><span class="arrow">↗</span></a>
+      <a class="link-row" href="#"><span class="name">Github</span><span class="arrow">↗</span></a>
+      <a class="link-row" href="#"><span class="name">LinkedIn</span><span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="label mono">Contact</div>
+    <form>
+      <div class="field mono">
+        <label>Name</label>
+        <input type="text" placeholder="Full Name" />
+      </div>
+      <div class="field mono">
+        <label>Email</label>
+        <input type="email" placeholder="Email Address" />
+      </div>
+      <div class="field mono">
+        <label>Message</label>
+        <textarea placeholder="Enter message here..."></textarea>
+      </div>
+      <button class="send-btn mono" type="submit">Send message</button>
+    </form>
+  </section>
+</div>

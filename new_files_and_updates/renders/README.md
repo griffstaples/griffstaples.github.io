@@ -90,3 +90,24 @@ previews, not placeholder text.
 - `M-single-column.html` — the lightest-structure option: one flowing
   left-aligned column, no grid or table scaffolding, just consistent
   small-label section markers and generous whitespace.
+
+K and M were the preferred directions.
+
+## Round six — K and M, with a photo of Griffin worked in
+
+No real photo exists yet, so all three use the same clearly-labeled
+placeholder convention as the hero's media blocks — a dashed-border box,
+not a broken image — so the layout can be judged independent of the
+final photo. Intentionally not a studio headshot; the placeholder calls
+for a field-conditions portrait, consistent with §6 of the plan.
+
+- `N-portrait-card.html` — based on K. A small portrait sits in the
+  hero-style label column, paired with the "About" marker like an ID
+  card. Smallest footprint, most integrated with the existing grid.
+- `O-photo-banner.html` — based on M. A wide field photo leads the
+  section before the flowing text starts, with a one-line caption
+  underneath. Biggest visual statement of the three.
+- `P-side-portrait.html` — hybrid: a portrait-oriented photo sits beside
+  the bio paragraph only (K-style column), while skills/links/contact
+  continue full-width underneath (M-style flow). Middle ground between
+  N and O.
