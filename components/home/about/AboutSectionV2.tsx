@@ -31,12 +31,10 @@ const RELATED_LINKS = [
 ];
 
 const AboutContainer = styled.div`
-  width: 100%;
   padding: 0 16px;
 `;
 
 const Banner = styled.div`
-  width: 100%;
   aspect-ratio: 16 / 8;
   border-radius: 6px;
   border: 1px dashed ${Colours.GunMetalBlue};
