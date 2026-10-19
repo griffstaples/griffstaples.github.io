@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
-export const useServerSafeDocument = () => {
-  const [safeDocument, setSafeDocument] = useState<Document | null>(null);
+const subscribe = () => () => {};
 
-  useEffect(() => {
-    setSafeDocument(document);
-  }, []);
-
-  return safeDocument;
-};
+// Returns null during SSR and hydration, then the real document on the client
+export const useServerSafeDocument = () =>
+  useSyncExternalStore<Document | null>(
+    subscribe,
+    () => document,
+    () => null
+  );

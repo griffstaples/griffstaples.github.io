@@ -117,9 +117,7 @@ const LinkArrow = styled.span.attrs({ className: "arrow" })`
   color: ${Colours.TextDim};
 `;
 
-interface Props {}
-
-const AboutSectionV2: React.FC<Props> = () => {
+const AboutSectionV2: React.FC = () => {
   return (
     <AboutContainer>
       <SectionLabel id="about-title">About</SectionLabel>

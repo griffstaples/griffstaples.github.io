@@ -17,16 +17,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           # update the Node version to meet your needs
-          node-version: 16
+          node-version: 22
           cache: npm
 
-      # export produces static site files in out folder
+      # build produces static site files in out folder (output: "export")
       # add .nojekyll file to prevent github from ignoring _next folder
       - name: Build
         run: |
           npm ci
           npm run build
-          npm run export
           touch out/.nojekyll
 
       # Build result in out folder gets copied to gh-pages branch and deployed

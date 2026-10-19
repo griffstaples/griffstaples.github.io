@@ -146,9 +146,7 @@ const SubmitButton = styled(PrimaryButton)`
   margin-top: 4px;
 `;
 
-interface Props {}
-
-const ContactSection: React.FC<Props> = () => {
+const ContactSection: React.FC = () => {
   return (
     <ContactsContainer>
       <SectionLabel id="contact-title">Contact</SectionLabel>

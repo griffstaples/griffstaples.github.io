@@ -92,9 +92,7 @@ const SeeAllLink = styled(Link)`
   }
 `;
 
-interface Props {}
-
-const ProjectsSection: React.FC<Props> = () => {
+const ProjectsSection: React.FC = () => {
   const featured = PROJECTS.filter((project) => project.featured);
 
   return (
