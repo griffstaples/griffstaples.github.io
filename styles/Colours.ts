@@ -6,4 +6,6 @@ export const Colours = {
   TextDim: "#7A7A78",
   NeonBlue: "#00EFFF",
   GunMetalBlue: "#546470",
+  // Only used to flag unfinished "TODO" content on project pages.
+  TodoAmber: "#FFB547",
 };

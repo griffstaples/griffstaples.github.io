@@ -56,7 +56,8 @@ const StackCell = styled(Td)`
   font-family: ${sourceCodePro.style.fontFamily};
   font-size: 12px;
   color: ${Colours.NeonBlue};
-  white-space: nowrap;
+  line-height: 1.7;
+  width: 30%;
 `;
 
 const LinkCell = styled(Td)`
@@ -112,8 +113,8 @@ const ProjectsSection: React.FC = () => {
             {featured.map((project) => (
               <tr key={project.slug}>
                 <ProjectName>{project.shortTitle ?? project.title}</ProjectName>
-                <Td>{project.teaser}</Td>
-                <StackCell>{project.stack.join(" · ")}</StackCell>
+                <Td>{project.result ?? project.teaser}</Td>
+                <StackCell>{project.stack.slice(0, 3).join(" · ")}</StackCell>
                 <LinkCell>
                   <ViewLink href={`/projects/${project.slug}`}>view →</ViewLink>
                 </LinkCell>
