@@ -5,7 +5,8 @@ import { sourceCodePro } from "styles/Fonts";
 const PlaceholderBox = styled.div<{ width: number; height: number }>`
   width: ${(props) => props.width}px;
   max-width: 100%;
-  height: ${(props) => props.height}px;
+  box-sizing: border-box;
+  aspect-ratio: ${(props) => props.width} / ${(props) => props.height};
   border-radius: 8px;
   border: 1px dashed ${Colours.GunMetalBlue};
   background-color: ${Colours.BackgroundColorDark};
